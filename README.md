@@ -21,7 +21,10 @@
   формат помилок, Dockerfile, docker-compose з PostgreSQL.
 - **Етап 3 (готово):** Android-каркас (Gradle, Compose, тема, навігація,
   Hilt), `DoseCalculator.kt` у domain-шарі, JUnit-тести на спільних кейсах.
-- Етапи 4–8 (Android: дані/синк/екрани, Web PWA, фіналізація) — у розробці.
+- **Етап 4 (готово):** Android — Room (сутності, DAO), Retrofit, репозиторії,
+  `SyncWorker` (WorkManager, кожні 12 год + вручну), налаштування сервера
+  через DataStore.
+- Етапи 5–8 (Android: екрани, Web PWA, фіналізація) — у розробці.
 
 ## Запуск через Docker (найшвидший шлях)
 
@@ -89,7 +92,7 @@ Kotlin-порт `backend/app/services/calculator.py` (той самий алго
 
 ```bash
 cd android
-./gradlew testDebugUnitTest   # 37 спільних кейсів + build
+./gradlew testDebugUnitTest   # 51 тест: 37 спільних кейсів калькулятора + Room/sync
 ./gradlew assembleDebug       # зібрати debug APK
 ./gradlew lintDebug           # Android Lint
 ```
@@ -97,6 +100,35 @@ cd android
 Потрібні: JDK 17+ і Android SDK (`compileSdk`/`targetSdk` 36, `minSdk` 26) —
 задайте шлях до SDK у `android/local.properties` (`sdk.dir=...`, у
 `.gitignore`) або через змінну оточення `ANDROID_HOME`.
+
+### Дані й синхронізація (Етап 4)
+
+- **Room** — єдине джерело правди для UI (`data/local/`): 6 сутностей
+  (species, substance, product, dose_rule, contraindication,
+  withdrawal_period), 1:1 з таблицями backend. Видалені на сервері записи
+  фізично видаляються локально, а не позначаються — застосунок ніколи не
+  показує м'яко видалені рядки, тож тримати їх локально нема сенсу.
+- **Retrofit** — лише один ендпоінт, `GET /api/v1/sync` (`data/remote/`):
+  калькулятор і пошук працюють повністю офлайн проти Room, мережа потрібна
+  лише для синхронізації.
+- **Репозиторії** (`data/repository/`) — по одному на сутність (читання з
+  Room як `Flow`, мапінг у domain-моделі) + `SyncRepository` (застосовує
+  `/sync` в одній Room-транзакції: upsert активних рядків, видалення тих, де
+  `is_deleted=true`).
+- **SyncWorker** (`data/sync/`) — Hilt-інтегрований `CoroutineWorker`:
+  періодично раз на 12 год (лише за наявності мережі) через `SyncScheduler`,
+  плюс одноразовий запуск для кнопки «Синхронізувати зараз» (Етап 5).
+- **Налаштування** (`data/settings/SettingsRepository.kt`, DataStore) —
+  адреса сервера (за замовчуванням `http://10.0.2.2:8000/` — аліас хоста в
+  емуляторі) і час останньої синхронізації (курсор `since` для наступного
+  інкрементного `/sync`); `BaseUrlInterceptor` підставляє її в кожен запит,
+  тож зміна адреси не потребує перестворення Retrofit.
+- **Мережа**: `network_security_config.xml` дозволяє HTTP лише для
+  `10.0.2.2`/`localhost` і лише в debug-збірці (`src/debug/res/xml/`);
+  release-збірка приймає тільки HTTPS.
+- Тести Room/sync запускаються через Robolectric (реальний in-memory SQLite,
+  без емулятора); пінінг `@Config(sdk = [34])` обходить баг сумісності
+  Robolectric 4.17 з JDK 21 на щойно доданих у Robolectric API-36 шейдах.
 
 **Чому AGP 8.13.2, а не 9.x:** на момент розробки Hilt Gradle-плагін уже
 вимагає AGP ≥9.0, але найновіші версії AndroidX (Compose BOM, core-ktx,

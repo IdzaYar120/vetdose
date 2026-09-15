@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Release builds: HTTPS only, no cleartext exceptions. The debug variant
+     overrides this file (src/debug/res/xml/) to allow plain HTTP to the
+     emulator's host-loopback alias, 10.0.2.2, where a local dev backend runs. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
