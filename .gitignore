@@ -1,0 +1,33 @@
+# Python / backend
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+*.db
+*.sqlite3
+.env
+
+# Node / web (future stages)
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Android / Gradle (future stages)
+.gradle/
+/android/**/build/
+/android/local.properties
+/android/.idea/
+*.iml
+.cxx/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

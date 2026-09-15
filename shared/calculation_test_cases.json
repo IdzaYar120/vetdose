@@ -1,0 +1,1433 @@
+[
+  {
+    "id": "mg_per_kg_basic",
+    "description": "Базовий розрахунок мг/кг з рідкою формою",
+    "input": {
+      "weight_kg": "5.2",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "52.0000",
+      "dose_max": "52.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "1.0",
+      "administration_max": "1.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "5,2 кг × 10 мг/кг = 52 мг",
+        "52 мг ÷ 50 мг/мл = 1,04 мл"
+      ]
+    }
+  },
+  {
+    "id": "mg_per_kg_range",
+    "description": "Діапазон дози мг/кг",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "5",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "100",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "50.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "0.50",
+      "administration_max": "1.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "10 кг × 5–10 мг/кг = 50–100 мг",
+        "50–100 мг ÷ 100 мг/мл = 0,5–1 мл"
+      ]
+    }
+  },
+  {
+    "id": "mcg_per_kg_to_mg_ml",
+    "description": "Конвертація мкг/кг у мл при концентрації мг/мл",
+    "input": {
+      "weight_kg": "4",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "5",
+        "dose_max": "5",
+        "dose_unit": "mcg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "0.1",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "20.0000",
+      "dose_max": "20.0000",
+      "dose_amount_unit": "mcg",
+      "administration_min": "0.20",
+      "administration_max": "0.20",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "4 кг × 5 мкг/кг = 20 мкг",
+        "20 мкг ÷ 0,1 мг/мл = 0,2 мл"
+      ]
+    }
+  },
+  {
+    "id": "iu_per_kg_basic",
+    "description": "Розрахунок МО/кг",
+    "input": {
+      "weight_kg": "20",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "100",
+        "dose_max": "100",
+        "dose_unit": "iu_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "1000",
+        "concentration_unit": "iu_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "2000.0000",
+      "dose_max": "2000.0000",
+      "dose_amount_unit": "iu",
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "20 кг × 100 МО/кг = 2000 МО",
+        "2000 МО ÷ 1000 МО/мл = 2 мл"
+      ]
+    }
+  },
+  {
+    "id": "ml_per_kg_basic",
+    "description": "Пряме дозування мл/кг",
+    "input": {
+      "weight_kg": "8",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "0.1",
+        "dose_max": "0.2",
+        "dose_unit": "ml_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": null,
+        "concentration_unit": null,
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": null,
+      "dose_max": null,
+      "dose_amount_unit": null,
+      "administration_min": "0.80",
+      "administration_max": "1.6",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "8 кг × 0,1–0,2 мл/кг = 0,8–1,6 мл"
+      ]
+    }
+  },
+  {
+    "id": "ml_per_10kg_basic",
+    "description": "Дозування мл/10кг",
+    "input": {
+      "weight_kg": "25",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "1",
+        "dose_max": "1",
+        "dose_unit": "ml_per_10kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": null,
+        "concentration_unit": null,
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": null,
+      "dose_max": null,
+      "dose_amount_unit": null,
+      "administration_min": "2.5",
+      "administration_max": "2.5",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "25 кг ÷ 10 × 1 мл/10кг = 2,5 мл"
+      ]
+    }
+  },
+  {
+    "id": "mg_per_animal_fixed",
+    "description": "Фіксована доза мг на тварину",
+    "input": {
+      "weight_kg": "15",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "50",
+        "dose_max": "50",
+        "dose_unit": "mg_per_animal",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "25",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "50.0000",
+      "dose_max": "50.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "Фіксована доза на тварину: 50 мг/тварину",
+        "50 мг ÷ 25 мг/мл = 2 мл"
+      ]
+    }
+  },
+  {
+    "id": "ml_per_animal_fixed",
+    "description": "Фіксована доза мл на тварину",
+    "input": {
+      "weight_kg": "3",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "2",
+        "dose_max": "2",
+        "dose_unit": "ml_per_animal",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": null,
+        "concentration_unit": null,
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": null,
+      "dose_max": null,
+      "dose_amount_unit": null,
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "Фіксована доза на тварину: 2 мл/тварину"
+      ]
+    }
+  },
+  {
+    "id": "tablet_divisible_1",
+    "description": "Таблетки, крок 1 (лише цілі)",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_tablet",
+        "tablet_divisible_by": 1
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "100.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2",
+      "administration_max": "2",
+      "administration_unit": "tablets",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "10 кг × 10 мг/кг = 100 мг",
+        "100 мг ÷ 50 мг/таблетку = 2 таблеток (округлено до кроку 1)"
+      ]
+    }
+  },
+  {
+    "id": "tablet_divisible_2",
+    "description": "Таблетки, крок 1/2",
+    "input": {
+      "weight_kg": "6",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_tablet",
+        "tablet_divisible_by": 2
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "60.0000",
+      "dose_max": "60.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "1.5",
+      "administration_max": "1.0",
+      "administration_unit": "tablets",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "TABLET_CANNOT_MATCH_RANGE"
+      ],
+      "explanation": [
+        "6 кг × 10 мг/кг = 60 мг",
+        "60 мг ÷ 50 мг/таблетку = 1,5–1 таблеток (округлено до кроку 0,5)"
+      ]
+    }
+  },
+  {
+    "id": "tablet_divisible_4",
+    "description": "Таблетки, крок 1/4",
+    "input": {
+      "weight_kg": "6",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "100",
+        "concentration_unit": "mg_per_tablet",
+        "tablet_divisible_by": 4
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "60.0000",
+      "dose_max": "60.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "0.75",
+      "administration_max": "0.50",
+      "administration_unit": "tablets",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "TABLET_CANNOT_MATCH_RANGE"
+      ],
+      "explanation": [
+        "6 кг × 10 мг/кг = 60 мг",
+        "60 мг ÷ 100 мг/таблетку = 0,75–0,5 таблеток (округлено до кроку 0,25)"
+      ]
+    }
+  },
+  {
+    "id": "tablet_cannot_match_range",
+    "description": "Округлення таблеток унеможливлює діапазон",
+    "input": {
+      "weight_kg": "1",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "11",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "100",
+        "concentration_unit": "mg_per_tablet",
+        "tablet_divisible_by": 1
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "10.0000",
+      "dose_max": "11.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "1",
+      "administration_max": "0",
+      "administration_unit": "tablets",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "TABLET_CANNOT_MATCH_RANGE"
+      ],
+      "explanation": [
+        "1 кг × 10–11 мг/кг = 10–11 мг",
+        "10–11 мг ÷ 100 мг/таблетку = 1–0 таблеток (округлено до кроку 1)"
+      ]
+    }
+  },
+  {
+    "id": "max_total_dose_capped_mg",
+    "description": "Обмеження максимальною дозою (мг)",
+    "input": {
+      "weight_kg": "50",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": "300",
+        "max_total_dose_unit": "mg"
+      },
+      "product": {
+        "concentration_value": "100",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "300.0000",
+      "dose_max": "300.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "3.0",
+      "administration_max": "3.0",
+      "administration_unit": "ml",
+      "max_dose_capped": true,
+      "warning_codes": [
+        "MAX_DOSE_CAPPED"
+      ],
+      "explanation": [
+        "50 кг × 10 мг/кг = 500 мг",
+        "Доза обмежена максимумом 300 мг",
+        "300 мг ÷ 100 мг/мл = 3 мл"
+      ]
+    }
+  },
+  {
+    "id": "max_total_dose_capped_mcg_to_mg",
+    "description": "Обмеження максимальною дозою з конвертацією мкг у мг",
+    "input": {
+      "weight_kg": "50",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "200",
+        "dose_max": "200",
+        "dose_unit": "mcg_per_kg",
+        "is_verified": true,
+        "max_total_dose": "8",
+        "max_total_dose_unit": "mg"
+      },
+      "product": {
+        "concentration_value": "2",
+        "concentration_unit": "mcg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "8000.0000",
+      "dose_max": "8000.0000",
+      "dose_amount_unit": "mcg",
+      "administration_min": "4000.0",
+      "administration_max": "4000.0",
+      "administration_unit": "ml",
+      "max_dose_capped": true,
+      "warning_codes": [
+        "MAX_DOSE_CAPPED"
+      ],
+      "explanation": [
+        "50 кг × 200 мкг/кг = 10000 мкг",
+        "Доза обмежена максимумом 8000 мкг",
+        "8000 мкг ÷ 2 мкг/мл = 4000 мл"
+      ]
+    }
+  },
+  {
+    "id": "max_total_dose_capped_ml",
+    "description": "Обмеження максимальним об'ємом",
+    "input": {
+      "weight_kg": "40",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "0.5",
+        "dose_max": "0.5",
+        "dose_unit": "ml_per_kg",
+        "is_verified": true,
+        "max_total_dose": "15",
+        "max_total_dose_unit": "ml"
+      },
+      "product": {
+        "concentration_value": null,
+        "concentration_unit": null,
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": null,
+      "dose_max": null,
+      "dose_amount_unit": null,
+      "administration_min": "15.0",
+      "administration_max": "15.0",
+      "administration_unit": "ml",
+      "max_dose_capped": true,
+      "warning_codes": [
+        "MAX_DOSE_CAPPED"
+      ],
+      "explanation": [
+        "40 кг × 0,5 мл/кг = 20 мл",
+        "Доза обмежена максимумом 15 мл"
+      ]
+    }
+  },
+  {
+    "id": "incompatible_iu_dose_mg_conc",
+    "description": "МО/кг проти концентрації мг/мл",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "100",
+        "dose_max": "100",
+        "dose_unit": "iu_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INCOMPATIBLE_UNITS"
+    }
+  },
+  {
+    "id": "incompatible_mg_dose_iu_conc",
+    "description": "мг/кг проти концентрації МО/мл",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "1000",
+        "concentration_unit": "iu_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INCOMPATIBLE_UNITS"
+    }
+  },
+  {
+    "id": "incompatible_max_dose_unit",
+    "description": "Максимальна доза у несумісних одиницях",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "100",
+        "dose_max": "100",
+        "dose_unit": "iu_per_kg",
+        "is_verified": true,
+        "max_total_dose": "50",
+        "max_total_dose_unit": "mg"
+      },
+      "product": {
+        "concentration_value": "1000",
+        "concentration_unit": "iu_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INCOMPATIBLE_UNITS"
+    }
+  },
+  {
+    "id": "invalid_weight_zero",
+    "description": "Вага дорівнює нулю",
+    "input": {
+      "weight_kg": "0",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INVALID_WEIGHT"
+    }
+  },
+  {
+    "id": "invalid_weight_too_large",
+    "description": "Вага перевищує 1500 кг",
+    "input": {
+      "weight_kg": "1501",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INVALID_WEIGHT"
+    }
+  },
+  {
+    "id": "invalid_dose_range",
+    "description": "dose_min перевищує dose_max",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "20",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INVALID_DOSE_RANGE"
+    }
+  },
+  {
+    "id": "invalid_concentration_zero",
+    "description": "Концентрація дорівнює нулю",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "0",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INVALID_CONCENTRATION"
+    }
+  },
+  {
+    "id": "missing_concentration",
+    "description": "Відсутня концентрація для мас-дози",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": null,
+        "concentration_unit": null,
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "MISSING_CONCENTRATION"
+    }
+  },
+  {
+    "id": "missing_tablet_divisor",
+    "description": "Відсутній крок ділення таблетки",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_tablet",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "MISSING_TABLET_DIVISOR"
+    }
+  },
+  {
+    "id": "weight_out_of_typical_range",
+    "description": "Вага поза типовим діапазоном виду",
+    "input": {
+      "weight_kg": "50",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "2",
+        "typical_max_weight_kg": "10"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "500.0000",
+      "dose_max": "500.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "10.0",
+      "administration_max": "10.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "WEIGHT_OUT_OF_TYPICAL_RANGE"
+      ],
+      "explanation": [
+        "50 кг × 10 мг/кг = 500 мг",
+        "500 мг ÷ 50 мг/мл = 10 мл"
+      ]
+    }
+  },
+  {
+    "id": "absolute_contraindication",
+    "description": "Абсолютне протипоказання",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": [
+        {
+          "severity": "absolute",
+          "message_uk": "TEST: протипоказано при вагітності"
+        }
+      ]
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "100.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "ABSOLUTE_CONTRAINDICATION"
+      ],
+      "explanation": [
+        "10 кг × 10 мг/кг = 100 мг",
+        "100 мг ÷ 50 мг/мл = 2 мл"
+      ]
+    }
+  },
+  {
+    "id": "caution_warning",
+    "description": "Застереження (caution)",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": [
+        {
+          "severity": "caution",
+          "message_uk": "TEST: обережно при нирковій недостатності"
+        }
+      ]
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "100.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "CAUTION"
+      ],
+      "explanation": [
+        "10 кг × 10 мг/кг = 100 мг",
+        "100 мг ÷ 50 мг/мл = 2 мл"
+      ]
+    }
+  },
+  {
+    "id": "rule_not_verified",
+    "description": "Непідтверджене правило",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": false,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "100.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "RULE_NOT_VERIFIED"
+      ],
+      "explanation": [
+        "10 кг × 10 мг/кг = 100 мг",
+        "100 мг ÷ 50 мг/мл = 2 мл"
+      ]
+    }
+  },
+  {
+    "id": "food_producing_animal",
+    "description": "Продуктивна тварина",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": true,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "100.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2.0",
+      "administration_max": "2.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "FOOD_PRODUCING_ANIMAL"
+      ],
+      "explanation": [
+        "10 кг × 10 мг/кг = 100 мг",
+        "100 мг ÷ 50 мг/мл = 2 мл"
+      ]
+    }
+  },
+  {
+    "id": "mg_per_g_powder",
+    "description": "Порошок мг/г",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "20",
+        "dose_max": "20",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "100",
+        "concentration_unit": "mg_per_g",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "200.0000",
+      "dose_max": "200.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "2.00",
+      "administration_max": "2.00",
+      "administration_unit": "g",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "10 кг × 20 мг/кг = 200 мг",
+        "200 мг ÷ 100 мг/г = 2 г"
+      ]
+    }
+  },
+  {
+    "id": "volume_with_aux_mass_dose",
+    "description": "мл/кг з інформативною дозою в мг",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "0.5",
+        "dose_max": "0.5",
+        "dose_unit": "ml_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "250.0000",
+      "dose_max": "250.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "5.0",
+      "administration_max": "5.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "10 кг × 0,5 мл/кг = 5 мл",
+        "5 мл × 50 мг/мл = 250 мг"
+      ]
+    }
+  },
+  {
+    "id": "display_rounding_under_1ml",
+    "description": "Округлення показу об'єму < 1 мл (2 знаки)",
+    "input": {
+      "weight_kg": "1",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "333",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "10.0000",
+      "dose_max": "10.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "0.03",
+      "administration_max": "0.03",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "1 кг × 10 мг/кг = 10 мг",
+        "10 мг ÷ 333 мг/мл = 0,03 мл"
+      ]
+    }
+  },
+  {
+    "id": "display_rounding_1_to_10ml",
+    "description": "Округлення показу об'єму 1-10 мл (1 знак)",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "17",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "100.0000",
+      "dose_max": "100.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "5.9",
+      "administration_max": "5.9",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "10 кг × 10 мг/кг = 100 мг",
+        "100 мг ÷ 17 мг/мл = 5,8824 мл"
+      ]
+    }
+  },
+  {
+    "id": "display_rounding_over_10ml",
+    "description": "Округлення показу об'єму > 10 мл (крок 0.5)",
+    "input": {
+      "weight_kg": "100",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "6",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "1000.0000",
+      "dose_max": "1000.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "166.5",
+      "administration_max": "166.5",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [],
+      "explanation": [
+        "100 кг × 10 мг/кг = 1000 мг",
+        "1000 мг ÷ 6 мг/мл = 166,6667 мл"
+      ]
+    }
+  },
+  {
+    "id": "missing_max_dose_unit",
+    "description": "Максимальна доза без одиниці вимірювання",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": true,
+        "max_total_dose": "100",
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "MISSING_MAX_DOSE_UNIT"
+    }
+  },
+  {
+    "id": "invalid_concentration_zero_volume_aux",
+    "description": "Нульова концентрація для інформативної дози (мл/кг)",
+    "input": {
+      "weight_kg": "10",
+      "species": {
+        "is_food_producing": false,
+        "typical_min_weight_kg": "1",
+        "typical_max_weight_kg": "100"
+      },
+      "dose_rule": {
+        "dose_min": "0.5",
+        "dose_max": "0.5",
+        "dose_unit": "ml_per_kg",
+        "is_verified": true,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "0",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": []
+    },
+    "expected": {
+      "error_code": "INVALID_CONCENTRATION"
+    }
+  },
+  {
+    "id": "multiple_warnings_combined",
+    "description": "Кілька попереджень одночасно (перевірка порядку)",
+    "input": {
+      "weight_kg": "50",
+      "species": {
+        "is_food_producing": true,
+        "typical_min_weight_kg": "2",
+        "typical_max_weight_kg": "10"
+      },
+      "dose_rule": {
+        "dose_min": "10",
+        "dose_max": "10",
+        "dose_unit": "mg_per_kg",
+        "is_verified": false,
+        "max_total_dose": null,
+        "max_total_dose_unit": null
+      },
+      "product": {
+        "concentration_value": "50",
+        "concentration_unit": "mg_per_ml",
+        "tablet_divisible_by": null
+      },
+      "contraindications": [
+        {
+          "severity": "absolute",
+          "message_uk": "TEST: абсолютне протипоказання"
+        },
+        {
+          "severity": "caution",
+          "message_uk": "TEST: застереження"
+        }
+      ]
+    },
+    "expected": {
+      "error_code": null,
+      "dose_min": "500.0000",
+      "dose_max": "500.0000",
+      "dose_amount_unit": "mg",
+      "administration_min": "10.0",
+      "administration_max": "10.0",
+      "administration_unit": "ml",
+      "max_dose_capped": false,
+      "warning_codes": [
+        "WEIGHT_OUT_OF_TYPICAL_RANGE",
+        "ABSOLUTE_CONTRAINDICATION",
+        "CAUTION",
+        "RULE_NOT_VERIFIED",
+        "FOOD_PRODUCING_ANIMAL"
+      ],
+      "explanation": [
+        "50 кг × 10 мг/кг = 500 мг",
+        "500 мг ÷ 50 мг/мл = 10 мл"
+      ]
+    }
+  }
+]
