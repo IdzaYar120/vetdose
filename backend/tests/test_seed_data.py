@@ -1,5 +1,5 @@
 from app.models import Contraindication, DoseRule, Product, Species, Substance, WithdrawalPeriod
-from app.seed.seed_data import seed
+from app.seed.seed_data import seed, seed_if_empty
 
 
 def test_seed_populates_expected_fixtures(db_session):
@@ -45,3 +45,20 @@ def test_seed_is_rerunnable(db_session):
     seed(db_session)
 
     assert db_session.query(Species).count() == 9
+
+
+def test_seed_if_empty_seeds_fresh_db(db_session):
+    assert seed_if_empty(db_session) is True
+    assert db_session.query(Species).count() == 9
+
+
+def test_seed_if_empty_skips_when_data_exists(db_session):
+    seed(db_session)
+    species = db_session.query(Species).first()
+    species.name_uk = "TEST Змінено вручну"
+    db_session.commit()
+
+    assert seed_if_empty(db_session) is False
+
+    refreshed = db_session.query(Species).filter_by(id=species.id).one()
+    assert refreshed.name_uk == "TEST Змінено вручну"

@@ -32,7 +32,11 @@ class GUID(TypeDecorator[uuid.UUID]):
             value = uuid.UUID(value)
         return str(value)
 
-    def process_result_value(self, value: str | None, dialect: Dialect) -> uuid.UUID | None:
+    def process_result_value(
+        self, value: str | uuid.UUID | None, dialect: Dialect
+    ) -> uuid.UUID | None:
         if value is None:
             return None
+        if isinstance(value, uuid.UUID):
+            return value
         return uuid.UUID(value)

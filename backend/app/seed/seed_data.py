@@ -434,12 +434,31 @@ def seed(session: Session) -> None:
     session.commit()
 
 
+def seed_if_empty(session: Session) -> bool:
+    """Seeds only on a fresh database. Used by the container entrypoint so a
+    `docker compose restart` never wipes data an admin has since entered.
+    """
+    if session.query(Species).first() is not None:
+        return False
+    seed(session)
+    return True
+
+
 def main() -> None:
+    import sys
+
     from app.db import SessionLocal
 
+    force = "--force" in sys.argv[1:]
     session = SessionLocal()
     try:
-        seed(session)
+        if force:
+            seed(session)
+            print("Seeded (forced full reseed).")
+        elif seed_if_empty(session):
+            print("Seeded (database was empty).")
+        else:
+            print("Database already has data — skipped seeding. Use --force to reseed.")
     finally:
         session.close()
 

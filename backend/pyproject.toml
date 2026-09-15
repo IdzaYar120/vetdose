@@ -29,6 +29,10 @@ extend-exclude = ["alembic/versions"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
+# UP046: our generic TypeVars (e.g. ModelT) are intentionally module-level
+# so they can be shared across app.crud, app.api.v1.admin_crud and
+# app.api.v1.calculate — PEP 695's `class Foo[T]` scopes T to the class only.
+ignore = ["UP046"]
 
 [tool.mypy]
 python_version = "3.12"
@@ -39,6 +43,7 @@ plugins = ["pydantic.mypy"]
 module = "tests.*"
 disallow_untyped_defs = false
 disallow_incomplete_defs = false
+disallow_untyped_calls = false
 
 [tool.pytest.ini_options]
 addopts = "--cov=app --cov-report=term-missing"
