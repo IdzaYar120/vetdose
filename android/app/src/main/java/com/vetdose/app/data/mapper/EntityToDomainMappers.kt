@@ -1,7 +1,9 @@
 package com.vetdose.app.data.mapper
 
+import com.vetdose.app.data.local.entity.CalculationHistoryEntity
 import com.vetdose.app.data.local.entity.ContraindicationEntity
 import com.vetdose.app.data.local.entity.DoseRuleEntity
+import com.vetdose.app.data.local.entity.FavoriteProductEntity
 import com.vetdose.app.data.local.entity.ProductEntity
 import com.vetdose.app.data.local.entity.SpeciesEntity
 import com.vetdose.app.data.local.entity.SubstanceEntity
@@ -10,8 +12,10 @@ import com.vetdose.app.domain.calculator.ConcentrationUnit
 import com.vetdose.app.domain.calculator.DoseUnit
 import com.vetdose.app.domain.calculator.MaxTotalDoseUnit
 import com.vetdose.app.domain.calculator.Severity
+import com.vetdose.app.domain.model.CalculationHistoryEntry
 import com.vetdose.app.domain.model.Contraindication
 import com.vetdose.app.domain.model.DoseRule
+import com.vetdose.app.domain.model.FavoriteProduct
 import com.vetdose.app.domain.model.FoodProduct
 import com.vetdose.app.domain.model.Product
 import com.vetdose.app.domain.model.ProductForm
@@ -20,6 +24,7 @@ import com.vetdose.app.domain.model.Species
 import com.vetdose.app.domain.model.Substance
 import com.vetdose.app.domain.model.WithdrawalPeriod
 import java.math.BigDecimal
+import java.time.Instant
 
 fun SpeciesEntity.toDomain(): Species = Species(
     id = id,
@@ -86,4 +91,18 @@ fun WithdrawalPeriodEntity.toDomain(): WithdrawalPeriod = WithdrawalPeriod(
     days = days,
     hours = hours,
     source = source,
+)
+
+fun CalculationHistoryEntity.toDomain(): CalculationHistoryEntry = CalculationHistoryEntry(
+    id = id,
+    timestamp = Instant.ofEpochMilli(timestamp),
+    speciesId = speciesId,
+    doseRuleId = doseRuleId,
+    productId = productId,
+    weightKg = BigDecimal(weightKg),
+)
+
+fun FavoriteProductEntity.toDomain(): FavoriteProduct = FavoriteProduct(
+    productId = productId,
+    addedAt = Instant.ofEpochMilli(addedAt),
 )

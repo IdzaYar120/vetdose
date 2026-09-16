@@ -3,8 +3,10 @@ package com.vetdose.app.di
 import android.content.Context
 import androidx.room.Room
 import com.vetdose.app.data.local.VetDoseDatabase
+import com.vetdose.app.data.local.dao.CalculationHistoryDao
 import com.vetdose.app.data.local.dao.ContraindicationDao
 import com.vetdose.app.data.local.dao.DoseRuleDao
+import com.vetdose.app.data.local.dao.FavoriteProductDao
 import com.vetdose.app.data.local.dao.ProductDao
 import com.vetdose.app.data.local.dao.SpeciesDao
 import com.vetdose.app.data.local.dao.SubstanceDao
@@ -23,7 +25,9 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): VetDoseDatabase =
-        Room.databaseBuilder(context, VetDoseDatabase::class.java, VetDoseDatabase.DATABASE_NAME).build()
+        Room.databaseBuilder(context, VetDoseDatabase::class.java, VetDoseDatabase.DATABASE_NAME)
+            .addMigrations(VetDoseDatabase.MIGRATION_1_2)
+            .build()
 
     @Provides
     fun provideSpeciesDao(database: VetDoseDatabase): SpeciesDao = database.speciesDao()
@@ -42,4 +46,11 @@ object DatabaseModule {
 
     @Provides
     fun provideWithdrawalPeriodDao(database: VetDoseDatabase): WithdrawalPeriodDao = database.withdrawalPeriodDao()
+
+    @Provides
+    fun provideCalculationHistoryDao(database: VetDoseDatabase): CalculationHistoryDao =
+        database.calculationHistoryDao()
+
+    @Provides
+    fun provideFavoriteProductDao(database: VetDoseDatabase): FavoriteProductDao = database.favoriteProductDao()
 }

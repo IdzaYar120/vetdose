@@ -1,3 +1,90 @@
 <resources>
     <string name="app_name">VetDose</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_calculate">Розрахунок</string>
+    <string name="nav_history">Історія</string>
+    <string name="nav_settings">Налаштування</string>
+
+    <!-- Calculate screen -->
+    <string name="calculate_select_species">Оберіть вид тварини</string>
+    <string name="calculate_weight_label">Вага, кг</string>
+    <string name="calculate_weight_placeholder">Наприклад: 5,2</string>
+    <string name="calculate_weight_error">Введіть вагу більшу за 0</string>
+    <string name="calculate_product_label">Препарат</string>
+    <string name="calculate_choose_product">Обрати препарат</string>
+    <string name="calculate_change_product">Змінити</string>
+    <string name="calculate_button">Розрахувати</string>
+    <string name="calculate_select_species_first">Спершу оберіть вид тварини</string>
+    <string name="calculate_no_dose_rule">Для цього препарату немає правила дозування для обраного виду тварини</string>
+    <string name="calculate_first_sync_title">Потрібна перша синхронізація</string>
+    <string name="calculate_first_sync_body">База препаратів ще порожня. Підключіться до мережі й натисніть «Синхронізувати зараз» на екрані Налаштувань.</string>
+    <string name="calculate_first_sync_go_to_settings">Перейти до налаштувань</string>
+    <string name="calculate_weight_out_of_range_title">Перевірте вагу</string>
+    <string name="calculate_weight_out_of_range_body">Вага %1$s кг нетипова для виду «%2$s» (типово %3$s–%4$s кг). Продовжити розрахунок?</string>
+
+    <!-- Shared actions -->
+    <string name="action_confirm">Так, продовжити</string>
+    <string name="action_cancel">Скасувати</string>
+
+    <!-- Product search screen -->
+    <string name="search_title">Пошук препарату</string>
+    <string name="search_placeholder">Назва препарату або діюча речовина</string>
+    <string name="search_filter_species">Вид: %1$s</string>
+    <string name="search_filter_all_species">Усі види</string>
+    <string name="search_no_results">Нічого не знайдено</string>
+    <string name="search_favorites_section">Обрані</string>
+    <string name="search_all_section">Усі препарати</string>
+    <string name="search_favorite_add">Додати в обрані</string>
+    <string name="search_favorite_remove">Прибрати з обраних</string>
+
+    <!-- Result screen -->
+    <string name="result_title">Результат</string>
+    <string name="result_dose_label">Доза діючої речовини</string>
+    <string name="result_route_label">Шлях введення</string>
+    <string name="result_frequency_label">Кратність</string>
+    <string name="result_duration_label">Тривалість</string>
+    <string name="result_source_label">Джерело</string>
+    <string name="result_explanation_toggle">Покроковий розрахунок</string>
+    <string name="result_withdrawal_title">Терміни виведення</string>
+    <string name="result_withdrawal_until">%1$s — до %2$s (%3$d дн.)</string>
+    <string name="result_absolute_contraindication_title">Абсолютне протипоказання</string>
+    <string name="result_absolute_contraindication_confirm">Я ознайомлений(а), показати дозу</string>
+    <string name="result_error_title">Неможливо розрахувати дозу</string>
+    <string name="result_disclaimer">Програма лише допомагає в розрахунках. Остаточне рішення приймає лікар.</string>
+    <string name="unit_ml">мл</string>
+    <string name="unit_tablets">таблеток</string>
+    <string name="unit_g">г</string>
+    <string name="unit_mg">мг</string>
+    <string name="unit_mcg">мкг</string>
+    <string name="unit_iu">МО</string>
+
+    <!-- Route labels -->
+    <string name="route_iv">внутрішньовенно</string>
+    <string name="route_im">внутрішньом\'язово</string>
+    <string name="route_sc">підшкірно</string>
+    <string name="route_po">перорально</string>
+    <string name="route_topical">накожно</string>
+    <string name="route_other">інше</string>
+
+    <!-- Food product labels -->
+    <string name="food_product_meat">м\'ясо</string>
+    <string name="food_product_milk">молоко</string>
+    <string name="food_product_eggs">яйця</string>
+    <string name="food_product_honey">мед</string>
+
+    <!-- History screen -->
+    <string name="history_empty">Історія розрахунків поки порожня</string>
+    <string name="history_weight_format">%1$s кг</string>
+
+    <!-- Settings screen -->
+    <string name="settings_server_address">Адреса сервера</string>
+    <string name="settings_server_address_save">Зберегти</string>
+    <string name="settings_sync_now">Синхронізувати зараз</string>
+    <string name="settings_syncing">Синхронізація…</string>
+    <string name="settings_last_sync">Остання синхронізація: %1$s</string>
+    <string name="settings_last_sync_never">Ще не синхронізовано</string>
+    <string name="settings_sync_success">Синхронізацію завершено успішно</string>
+    <string name="settings_sync_error">Помилка синхронізації. Перевірте адресу сервера та з\'єднання з мережею.</string>
+    <string name="settings_disclaimer">Програма допомагає лікарю розраховувати дози. Рішення про лікування завжди приймає лікар.</string>
 </resources>
