@@ -1,0 +1,96 @@
+{
+  "product": {
+    "trade_name": "Xylazine Injection",
+    "manufacturer": "Bimeda, Inc. (виробник); Covetrus North America (дистриб'ютор)",
+    "substance": "Xylazine (as hydrochloride)",
+    "form": "injection_solution",
+    "concentration_value": "100",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["horse"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "horse",
+      "route": "iv",
+      "indication": "седація з коротшим періодом аналгезії (діагностичні, ортопедичні, стоматологічні процедури, заспокоєння непокірних тварин, знеболення)",
+      "original_text": "Intravenously-0.5 mL/100 lbs body weight (0.5 mg/lb). ... These dosages produce sedation which is usually maintained for 1 to 2 hours, and analgesia which lasts for 15 to 30 minutes.",
+      "dose_min": "1.10",
+      "dose_max": "1.10",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, тварина має спокійно відпочивати до повного ефекту",
+      "duration": "седація 1-2 год, аналгезія 15-30 хв",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "horse",
+      "route": "im",
+      "indication": "седація з коротшим періодом аналгезії",
+      "original_text": "Intramuscularly-1.0 mL/100 lbs body weight (1.0 mg/lb). ... These dosages produce sedation which is usually maintained for 1 to 2 hours, and analgesia which lasts for 15 to 30 minutes.",
+      "dose_min": "2.20",
+      "dose_max": "2.20",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, тварина має спокійно відпочивати до повного ефекту",
+      "duration": "седація 1-2 год, аналгезія 15-30 хв",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "продуктивні тварини; коні, призначені для отримання харчової продукції людини",
+      "severity": "absolute",
+      "original_text": "This drug should not be administered to domestic food-producing animals. Not for use in horses intended for human consumption.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "супутнє застосування з транквілізаторами",
+      "severity": "absolute",
+      "original_text": "Do not use Xylazine in conjunction with tranquilizers.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "внутрішньокаротидне (артеріальне) введення",
+      "severity": "caution",
+      "original_text": "Intracarotid Arterial Injection Should Be Avoided. As with many compounds, including tranquilizers, immediate violent seizures followed by collapse may result from inadvertent administration into the carotid artery.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "значно пригнічене дихання, важка патологія серця, прогресуюче захворювання печінки/нирок, важкий ендотоксичний/травматичний шок, стресові умови (спека, холод, висота, втома)",
+      "severity": "caution",
+      "original_text": "Careful consideration should be given before administering to horses or Cervidae with significantly depressed respiration, severe pathologic heart disease, advanced liver or kidney disease, severe endotoxic or traumatic shock, or stress conditions such as extreme heat, cold, high altitude or fatigue.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "супутнє застосування з барбітуратами (адитивний ефект на ЦНС)",
+      "severity": "caution",
+      "original_text": "Since an additive effect results from the use of Xylazine and the barbiturate compounds, it should be used with caution with these central nervous system depressants.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "XYLAZINE injection, solution",
+      "publisher": "Bimeda, Inc. / Covetrus North America / FDA DailyMed, ANADA 200-529",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=991eae20-c3c2-4498-b166-a72b5927edb8",
+      "section_or_page": "INDICATIONS; DOSAGE AND ADMINISTRATION; PRECAUTIONS; WARNINGS",
+      "document_date_or_version": "Сторінка DailyMed: Updated March 28, 2024, Version 5 (published Apr 1, 2024)",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Це конкретне джерело офіційно охоплює ЛИШЕ коней і Cervidae (оленячі: Fallow Deer, Mule Deer, Sika Deer, White-Tailed Deer, Elk) - 'For Use In Horses and Cervidae Only'. Cervidae не входять у перелік видів проєкту (cat|dog|cattle|pig|horse|sheep|goat|poultry|rabbit), тому їхнє дозування НЕ внесено як dose_rules, але збережено тут дослівно для можливого майбутнього використання: Fallow Deer 2.0-4.0 мг/фунт, Mule/Sika/White-Tailed Deer 1.0-2.0 мг/фунт, Elk 0.25-0.5 мг/фунт (усі в/м). Початковий drug_list.csv припускав ксилазин і для собак/котів/ВРХ (це поширена практика в реальній ветеринарії), але ЦЕ КОНКРЕТНЕ джерело таких даних не містить - дозування для собак/котів/ВРХ НЕ знайдено в цьому пакеті, позначено в 'Не знайдено' REVIEW.md (потрібен окремий продукт/джерело). Немає withdrawal_periods - препарат прямо виключає продуктивних тварин замість терміну виведення."
+}

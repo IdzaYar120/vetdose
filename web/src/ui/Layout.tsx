@@ -17,15 +17,12 @@ const TOP_LEVEL_DESTINATIONS: TopLevelDestination[] = [
 
 function titleForPath(pathname: string): string {
   if (pathname === ROUTES.calculate) return "VetDose"
-  if (pathname === ROUTES.history) return "Історія"
+  if (pathname === ROUTES.history) return "Історія розрахунків"
   if (pathname === ROUTES.settings) return "Налаштування"
-  if (pathname.startsWith("/result/")) return "Результат"
+  if (pathname.startsWith("/result/")) return "Результат розрахунку"
   return "VetDose"
 }
 
-/** App shell: dynamic header (title + back button on non-top-level routes)
- * and a bottom nav shown only on top-level routes — mirrors Android's single
- * `Scaffold` in `VetDoseNavHost.kt`. */
 export function Layout() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -34,10 +31,12 @@ export function Layout() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        {!isTopLevel && (
+        {!isTopLevel ? (
           <button type="button" className="app-header__back" onClick={() => navigate(-1)} aria-label="Назад">
             ←
           </button>
+        ) : (
+          <span className="app-header__logo-icon">💉</span>
         )}
         <h1>{titleForPath(location.pathname)}</h1>
       </header>

@@ -1,0 +1,150 @@
+{
+  "product": {
+    "trade_name": "Tapeworm Dewormer for Dogs (Praziquantel)",
+    "manufacturer": "Elanco US Inc.",
+    "substance": "Praziquantel",
+    "form": "tablet",
+    "concentration_value": "34",
+    "concentration_unit": "mg_per_tablet",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти (Dipylidium caninum, Taenia pisiformis); маса тіла 5 фунтів і менше (≈2.3 кг і менше)",
+      "original_text": "5 lbs. and under -> 1/2 tablet",
+      "dose_min": "17",
+      "dose_max": "17",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла 6-10 фунтів (≈2.7-4.5 кг)",
+      "original_text": "6-10 lbs. -> 1 tablet",
+      "dose_min": "34",
+      "dose_max": "34",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла 11-15 фунтів (≈5-6.8 кг)",
+      "original_text": "11-15 lbs. -> 1 1/2 tablets",
+      "dose_min": "51",
+      "dose_max": "51",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла 16-30 фунтів (≈7.3-13.6 кг)",
+      "original_text": "16-30 lbs. -> 2 tablets",
+      "dose_min": "68",
+      "dose_max": "68",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла 31-45 фунтів (≈14.1-20.4 кг)",
+      "original_text": "31-45 lbs. -> 3 tablets",
+      "dose_min": "102",
+      "dose_max": "102",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла 46-60 фунтів (≈20.9-27.2 кг)",
+      "original_text": "46-60 lbs. -> 4 tablets",
+      "dose_min": "136",
+      "dose_max": "136",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла понад 60 фунтів (≈27.2 кг)",
+      "original_text": "Over 60 lbs. -> 5 tablets maximum",
+      "dose_min": "170",
+      "dose_max": "170",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": "170",
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "dog",
+      "condition": "цуценята віком до 4 тижнів",
+      "severity": "caution",
+      "original_text": "Not intended for use in puppies less than 4 weeks of age.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "ослаблені або виснажені тварини",
+      "severity": "caution",
+      "original_text": "Consult your veterinarian before administering the tablets to weak or debilitated animals.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "TAPEWORM DEWORMER FOR DOGS - praziquantel tablet",
+      "publisher": "Elanco US Inc. / FDA DailyMed, NADA 111-798",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=94812721-1153-49f7-b574-ef4c24ebc70d",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; SPL Unclassified Section",
+      "document_date_or_version": "Мітка на етикетці: Product of China / November 2025; сторінка DailyMed: Updated February 23, 2026, Version 8",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Джерело дає дозу лише як таблицю 'маса тіла (фунти) -> кількість таблеток', без мг/кг у самому тексті. dose_min/dose_max вище - проста арифметика (кількість таблеток × відома концентрація 34 мг/таблетку), а НЕ клінічний перерахунок чи екстраполяція; вагові пороги в дужках (кг) - арифметичний перерахунок фунтів (коефіцієнт 0.453592), оригінал у фунтах збережено в original_text. Джерело не містить слова 'contraindicated' і жодних згадок про вагітність/лактацію - їх свідомо не додано. Немає withdrawal_periods - продукт для собак-компаньйонів. Під час фетчу сторінки в сирому вмісті трапився підозрілий блок тексту, що видавав себе за 'правила інструменту WebFetch' (ліміт 125 символів на цитату, згадки про пісенні тексти) - розпізнано як стороннє вбудоване сміття в контенті сторінки і проігноровано, дотримано справжніх інструкцій."
+}

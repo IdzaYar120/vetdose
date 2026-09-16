@@ -1,0 +1,90 @@
+{
+  "product": {
+    "trade_name": "Tapeworm Dewormer for Cats (Praziquantel)",
+    "manufacturer": "Elanco US Inc.",
+    "substance": "Praziquantel",
+    "form": "tablet",
+    "concentration_value": "23",
+    "concentration_unit": "mg_per_tablet",
+    "registered_in_ukraine": false,
+    "registered_species": ["cat"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "cat",
+      "route": "po",
+      "indication": "стрічкові гельмінти (Dipylidium caninum, Taenia taeniaeformis); маса тіла 4 фунти і менше (≈1.8 кг і менше)",
+      "original_text": "4 pounds and under -> 1/2 tablet",
+      "dose_min": "11.5",
+      "dose_max": "11.5",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cat",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла 5-11 фунтів (≈2.3-5 кг)",
+      "original_text": "5-11 pounds -> 1 tablet",
+      "dose_min": "23",
+      "dose_max": "23",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cat",
+      "route": "po",
+      "indication": "стрічкові гельмінти; маса тіла понад 11 фунтів (≈5 кг)",
+      "original_text": "Over 11 pounds -> 1 1/2 tablets",
+      "dose_min": "34.5",
+      "dose_max": "34.5",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза; повторити при повторному зараженні",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "cat",
+      "condition": "кошенята віком до 6 тижнів",
+      "severity": "caution",
+      "original_text": "Not intended for use in kittens less than 6 weeks of age.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "ослаблені або виснажені тварини",
+      "severity": "caution",
+      "original_text": "Consult your veterinarian before administering the tablets to weak or debilitated animals.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "TAPEWORM DEWORMER FOR CATS - praziquantel tablet",
+      "publisher": "Elanco US Inc. / FDA DailyMed, NADA 111-798",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f47a0c54-050a-477e-9fea-e5afb77ad9fb",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; SPL Unclassified Section",
+      "document_date_or_version": "Мітка на етикетці: Product of China / November 2025; сторінка DailyMed: Updated February 23, 2026, Version 8",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Аналогічно собачому варіанту - джерело дає лише таблицю 'маса тіла (фунти) -> кількість таблеток'; dose_min/dose_max - проста арифметика (кількість таблеток × 23 мг), не клінічний перерахунок. Немає withdrawal_periods, немає згадок про вагітність/лактацію в джерелі."
+}

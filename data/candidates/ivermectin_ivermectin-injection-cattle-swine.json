@@ -1,0 +1,120 @@
+{
+  "product": {
+    "trade_name": "Ivermectin Injection for Cattle and Swine, 1% Sterile Solution",
+    "manufacturer": "Norbrook Laboratories Limited (виробник) / Durvet, Inc. (дистриб'ютор)",
+    "substance": "Ivermectin",
+    "form": "injection_solution",
+    "concentration_value": "10",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["cattle", "pig"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "cattle",
+      "route": "sc",
+      "indication": "внутрішні та зовнішні паразити",
+      "original_text": "Ivermectin Injection should be given only by subcutaneous injection under the loose skin in front of or behind the shoulder at the recommended dose level of 200 mcg of ivermectin per kilogram of body weight.",
+      "dose_min": "200",
+      "dose_max": "200",
+      "dose_unit": "mcg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово (не більше 10 мл на одне місце ін'єкції)",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "pig",
+      "route": "sc",
+      "indication": "внутрішні та зовнішні паразити",
+      "original_text": "Swine: Ivermectin Injection should be given only by subcutaneous injection in the neck of swine at the recommended dose level of 300 mcg of ivermectin per kilogram (2.2 lb) of body weight.",
+      "dose_min": "300",
+      "dose_max": "300",
+      "dose_unit": "mcg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово; для свиноматок - за 7-14 днів до опоросу, для ремонтних свинок - за 7-14 днів до парування і за 7-14 днів до опоросу, для кнурів - щонайменше двічі на рік",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "внутрішньовенне або внутрішньом'язове введення",
+      "severity": "absolute",
+      "original_text": "This product is not for intravenous or intramuscular use. ... Ivermectin Injection is to be given subcutaneously only, to reduce risk of potentially fatal clostridial infection of the injection site.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "застосування цього препарату у собак",
+      "severity": "absolute",
+      "original_text": "This product should not be used in other animal species as severe adverse reactions, including fatalities in dogs, may result.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "самки молочної худоби відтворювального віку - термін виведення з молоком не встановлений",
+      "severity": "absolute",
+      "original_text": "Because a withdrawal time in milk has not been established, do not use in female dairy cattle of breeding age.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "телята, призначені для отримання телятини; передшлунково незрілі телята",
+      "severity": "absolute",
+      "original_text": "A withdrawal period has not been established for this product in pre-ruminating calves. Do not use in calves to be processed for veal.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [
+    {
+      "species": "cattle",
+      "route": "sc",
+      "food_product": "meat",
+      "days": 35,
+      "hours": null,
+      "original_text": "Do not treat cattle within 35 days of slaughter.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "pig",
+      "route": "sc",
+      "food_product": "meat",
+      "days": 18,
+      "hours": null,
+      "original_text": "Do not treat swine within 18 days of slaughter.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "route": "sc",
+      "food_product": "milk",
+      "days": null,
+      "hours": null,
+      "original_text": "Because a withdrawal time in milk has not been established, do not use in female dairy cattle of breeding age.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    }
+  ],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "IVERMECTIN FOR CATTLE AND SWINE - ivermectin injection, solution",
+      "publisher": "Norbrook Laboratories Limited / Durvet, Inc. / FDA DailyMed, ANADA 200-437",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f630e9fd-5131-4516-b86b-46ee563b9327",
+      "section_or_page": "Dosage; Warnings; Residue Warnings",
+      "document_date_or_version": "Мітка на етикетці: Rev 10/20; сторінка DailyMed: Updated November 7, 2025 (Version 3)",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Продукт також має показання для північного оленя та бізона (спецдозвіл 'Special Minor Use', 200 мкг/кг п/ш, забій не раніше 56 днів) - не внесено в dose_rules/withdrawal_periods, бо 'reindeer'/'bison' відсутні в переліку видів проєкту (cat|dog|cattle|pig|horse|sheep|goat|poultry|rabbit). UK VMD SPC для ivermectin (Ivomec Classic, SPC_139538.PDF, для ВРХ та овець) не вдалося прочитати - PDF повернувся як нечитабельний бінарний потік; тому дані для овець (sheep) в цьому пакеті відсутні - див. 'Не знайдено' у REVIEW.md. Кінь (horse) у цьому джерелі взагалі не згадується - не додавав нічого про коней, оскільки джерело мовчить, а не тому що препарат для коней не застосовується."
+}

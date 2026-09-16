@@ -2,12 +2,12 @@ from app.models import DoseRule, Product, Species, Substance
 
 
 def _amoxicillin_dog_setup(seeded_db):
-    substance = seeded_db.query(Substance).filter_by(name="TEST_Substance_Amoxicillin_Analog").one()
+    substance = seeded_db.query(Substance).filter_by(name="Amoxicillin").one()
     species = seeded_db.query(Species).filter_by(code="dog").one()
     dose_rule = (
         seeded_db.query(DoseRule).filter_by(substance_id=substance.id, species_id=species.id).one()
     )
-    product = seeded_db.query(Product).filter_by(trade_name="TEST_Antibiotic_Inj_A").one()
+    product = seeded_db.query(Product).filter_by(trade_name="Amoxoil Retard 150 mg/ml").one()
     return species, dose_rule, product
 
 
@@ -26,7 +26,7 @@ def test_calculate_success(client, seeded_db):
     body = response.json()
     assert body["administration_unit"] == "ml"
     assert isinstance(body["administration_min"], str)
-    assert "RULE_NOT_VERIFIED" in [w["code"] for w in body["warnings"]]
+    assert "RULE_NOT_VERIFIED" not in [w["code"] for w in body["warnings"]]
     assert len(body["explanation"]) >= 1
 
 
@@ -48,7 +48,7 @@ def test_calculate_species_mismatch(client, seeded_db):
 
 def test_calculate_substance_mismatch(client, seeded_db):
     species, dose_rule, _ = _amoxicillin_dog_setup(seeded_db)
-    other_product = seeded_db.query(Product).filter_by(trade_name="TEST_Insulin_Inj_A").one()
+    other_product = seeded_db.query(Product).filter_by(trade_name="Metacam 5 mg/ml").one()
     response = client.post(
         "/api/v1/calculate",
         json={

@@ -1,0 +1,153 @@
+{
+  "product": {
+    "trade_name": "Excenel RTU EZ Sterile Suspension",
+    "manufacturer": "Zoetis Inc.",
+    "substance": "Ceftiofur (as hydrochloride)",
+    "form": "suspension",
+    "concentration_value": "50",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["cattle", "pig"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "pig",
+      "route": "im",
+      "indication": "бактеріальна респіраторна хвороба свиней (A. pleuropneumoniae, P. multocida, S. Choleraesuis, S. suis)",
+      "original_text": "Administer intramuscularly at a dosage of 1.36 to 2.27 mg ceftiofur equivalents (CE)/lb (3 to 5 mg CE/kg) body weight (BW). Treatment should be repeated at 24 hour intervals for a total of three consecutive days.",
+      "dose_min": "3",
+      "dose_max": "5",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня, з інтервалом 24 год",
+      "duration": "3 доби",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "im",
+      "indication": "бактеріальна респіраторна хвороба ВРХ (BRD) та гострий копитний некробактеріоз (foot rot) - щоденний режим",
+      "original_text": "For bovine respiratory disease and acute bovine interdigital necrobacillosis: administer by intramuscular or subcutaneous administration at the dosage of 0.5 to 1 mg CE/lb (1.1 to 2.2 mg CE/kg) BW. Administer daily at 24 hour intervals for a total of three consecutive days. Additional treatments may be administered on Days 4 and 5.",
+      "dose_min": "1.1",
+      "dose_max": "2.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня, з інтервалом 24 год (в/м або п/ш)",
+      "duration": "3 доби, за потреби до 5 діб",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "im",
+      "indication": "бактеріальна респіраторна хвороба ВРХ (BRD) - режим через день",
+      "original_text": "For BRD only, administer intramuscularly or subcutaneously 1 mg CE/lb (2.2 mg CE/kg) BW every other day on Days 1 and 3 (48 hour interval).",
+      "dose_min": "2.2",
+      "dose_max": "2.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "через день, на 1-й та 3-й день (інтервал 48 год)",
+      "duration": "2 введення",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "im",
+      "indication": "гострий післяпологовий метрит (0-14 днів після отелення)",
+      "original_text": "For acute post-partum metritis: administer by intramuscular or subcutaneous administration at the dosage of 1 mg CE/lb (2.2 mg CE/kg) BW. Administer at 24 hour intervals for five consecutive days.",
+      "dose_min": "2.2",
+      "dose_max": "2.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня, з інтервалом 24 год (в/м або п/ш)",
+      "duration": "5 діб",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "відома гіперчутливість до препарату",
+      "severity": "absolute",
+      "original_text": "As with all drugs, the use of EXCENEL RTU EZ Sterile Suspension is contraindicated in animals previously found to be hypersensitive to the drug.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "телята, призначені для отримання телятини",
+      "severity": "absolute",
+      "original_text": "Not for use in calves to be processed for veal.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "репродуктивна функція, вагітність, лактація - ефекти не визначені",
+      "severity": "caution",
+      "original_text": "The effects of ceftiofur on cattle and swine reproductive performance, pregnancy and lactation have not been determined.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [
+    {
+      "species": "pig",
+      "route": "im",
+      "food_product": "meat",
+      "days": 4,
+      "hours": null,
+      "original_text": "Treated swine must not be slaughtered for 4 days when injection site volumes are less than or equal to 5 mL.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "food_product": "meat",
+      "days": 6,
+      "hours": null,
+      "original_text": "Treated swine must not be slaughtered for 6 days following the last treatment when injection site volumes are greater than 5 mL up to the maximum injection site volume of 15 mL.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "route": "im",
+      "food_product": "meat",
+      "days": 4,
+      "hours": null,
+      "original_text": "When used according to label indications, dosage and route of administration, treated cattle must not be slaughtered for 4 days following the last treatment.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "route": "im",
+      "food_product": "milk",
+      "days": 0,
+      "hours": null,
+      "original_text": "When used according to label indications, dosage and route of administration, a milk discard time is not required.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    }
+  ],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "EXCENEL RTU EZ - ceftiofur hydrochloride injection, suspension",
+      "publisher": "Zoetis Inc. / FDA DailyMed, NADA 141-288",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3357af32-f91b-4663-8f86-a2bcee7855ea",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; CONTRAINDICATIONS; PRECAUTIONS; RESIDUE WARNINGS",
+      "document_date_or_version": "Мітка на етикетці: Revised July 2022; сторінка DailyMed: Updated October 5, 2022, Version 3",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Свинячий термін виведення залежить від об'єму ін'єкції в одне місце (≤5 мл -> 4 доби, >5-15 мл -> 6 діб) - обидва варіанти внесено окремими записами withdrawal_periods, лікар має обрати відповідний за реальним об'ємом. Молочний термін виведення офіційно '0 днів' (discard time не потрібен) - це прямо заявлено виробником для США, але позначено needs_local_confirmation, оскільки термін виведення юридично прив'язаний до країни реєстрації. Route у джерелі дається як 'в/м або п/ш' одним реченням для ВРХ - обрано im як основний запис, альтернатива зазначена в original_text/frequency, без дублювання записів. Для передшлункових (pre-ruminating) телят термін виведення не встановлений - обмежено забороною застосування у телятах для телятини (контраіндикація), а не окремим withdrawal_period."
+}

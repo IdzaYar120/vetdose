@@ -1,0 +1,75 @@
+{
+  "product": {
+    "trade_name": "Amoxi-Drop",
+    "manufacturer": "Zoetis Inc.",
+    "substance": "Amoxicillin (as trihydrate)",
+    "form": "suspension",
+    "concentration_value": "50",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog", "cat"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "бактеріальні інфекції, чутливі до амоксициліну",
+      "original_text": "The recommended dosage is 5 mg/lb of body weight. Administer twice daily for 5-7 days. Continue for 48 hours after all symptoms have subsided.",
+      "dose_min": "11.02",
+      "dose_max": "11.02",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "двічі на добу",
+      "duration": "5-7 днів, продовжувати ще 48 год після зникнення симптомів",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cat",
+      "route": "po",
+      "indication": "бактеріальні інфекції, чутливі до амоксициліну",
+      "original_text": "The recommended dosage is 50 mg (5-10 mg/lb). Administer once daily for 5-7 days. Continue for 48 hours after all symptoms have subsided.",
+      "dose_min": "11.02",
+      "dose_max": "22.05",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "раз на добу",
+      "duration": "5-7 днів, продовжувати ще 48 год після зникнення симптомів",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "алергічна реакція на пеніцилін в анамнезі",
+      "severity": "absolute",
+      "original_text": "The use of this drug is contraindicated in animals with a history of an allergic reaction to penicillin.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "тварини, що вирощуються для отримання харчової продукції",
+      "severity": "absolute",
+      "original_text": "For use in dogs and cats only. Not for use in animals which are raised for food production.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "AMOXI-DROP - amoxicillin suspension (package insert)",
+      "publisher": "Zoetis Inc. / FDA DailyMed, NADA 055-085",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=24fb21f9-7411-4bfd-a3de-1b9356b4ced4",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; CONTRAINDICATIONS; WARNINGS",
+      "document_date_or_version": "Мітка на етикетці: Revised February 2019; сторінка DailyMed: Updated November 14, 2024, Version 5 (current)",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Продукт зареєстрований у США (FDA NADA 055-085), не перевірено в Держреєстрі ветпрепаратів України — торгова назва й концентрація для українського ринку можуть відрізнятись, потрібне локальне підтвердження. Доза в джерелі дана в мг/фунт; dose_min/dose_max вище — арифметичний перерахунок у мг/кг (1 фунт = 0.453592 кг, коефіцієнт 2.2046), а не клінічна екстраполяція; оригінальний текст із фунтами збережено в original_text. Формулювання дози для котів у джерелі внутрішньо суперечливе (фіксовані 50 мг чи діапазон 5-10 мг/фунт) - процитовано дослівно як є, для перевірки лікарем. Немає withdrawal_periods - продукт прямо виключає харчових тварин, а не дає термін виведення. UK VMD SPC для ін'єкційного амоксициліну (QRD-Auth_3095933.PDF) не вдалося прочитати - PDF повернувся як нечитабельний бінарний потік, тому цей кандидат не для ін'єкційної форми, а для оральної суспензії."
+}

@@ -29,9 +29,6 @@ export function SettingsScreen() {
   const lastSyncRow = useLiveQuery(() => db.settings.get(LAST_SYNC_TIME_KEY))
   const storedAddress = storedAddressRow?.value ?? DEFAULT_SERVER_BASE_URL
 
-  // `null` means "user hasn't typed anything yet" — the field displays
-  // `storedAddress` via the fallback below until they do, so there's no need
-  // to copy it into this state up front.
   const [addressOverride, setAddressOverride] = useState<string | null>(null)
   const { sync, isSyncing, outcome, errorMessage } = useSyncAction()
 
@@ -41,39 +38,54 @@ export function SettingsScreen() {
 
   return (
     <div className="settings-screen">
-      <section className="field">
-        <label htmlFor="server-address">Адреса сервера</label>
-        <input
-          id="server-address"
-          type="text"
-          value={addressOverride ?? storedAddress}
-          onChange={(e) => setAddressOverride(e.target.value)}
-        />
-      </section>
-      <button type="button" className="btn btn--outline" onClick={handleSave}>
-        Зберегти
-      </button>
-
-      <section className="settings-screen__sync">
-        <p>
-          {lastSyncRow?.value !== undefined
-            ? `Остання синхронізація: ${formatSyncTime(lastSyncRow.value)}`
-            : "Ще не синхронізовано"}
-        </p>
-        <button type="button" className="btn btn--primary btn--block" disabled={isSyncing} onClick={sync}>
-          {isSyncing ? "Синхронізація…" : "Синхронізувати зараз"}
+      <div className="card settings-screen__card">
+        <p className="section-title">🌐 З'єднання з сервером</p>
+        <section className="field">
+          <label htmlFor="server-address">Адреса сервера</label>
+          <input
+            id="server-address"
+            type="text"
+            value={addressOverride ?? storedAddress}
+            onChange={(e) => setAddressOverride(e.target.value)}
+          />
+        </section>
+        <button type="button" className="btn btn--outline" onClick={handleSave}>
+          Зберегти адресу
         </button>
-        {outcome === "success" && <p className="settings-screen__outcome">Синхронізацію завершено успішно</p>}
-        {outcome === "error" && (
-          <p className="settings-screen__outcome settings-screen__outcome--error">
-            Помилка синхронізації. Перевірте адресу сервера та з'єднання з мережею.
-            {errorMessage !== null && ` (${errorMessage})`}
+      </div>
+
+      <div className="card settings-screen__card">
+        <p className="section-title">🔄 Оновлення бази даних</p>
+        <section className="settings-screen__sync">
+          <p className="disclaimer">
+            {lastSyncRow?.value !== undefined
+              ? `🕒 Остання синхронізація: ${formatSyncTime(lastSyncRow.value)}`
+              : "⚠️ Ще не синхронізовано з сервером"}
           </p>
-        )}
-      </section>
+          <button
+            type="button"
+            className="btn btn--primary btn--block"
+            disabled={isSyncing}
+            onClick={() => sync(true)}
+          >
+            {isSyncing ? "Синхронізація…" : "🔄 Повна пересинхронізація (Очистити й завантажити дійсні препарати)"}
+          </button>
+          {outcome === "success" && (
+            <p className="settings-screen__outcome settings-screen__outcome--success">
+              ✅ Базу даних успішно оновлено реальними препаратами!
+            </p>
+          )}
+          {outcome === "error" && (
+            <p className="settings-screen__outcome settings-screen__outcome--error">
+              ❌ Помилка синхронізації. Перевірте адресу сервера та з'єднання.
+              {errorMessage !== null && ` (${errorMessage})`}
+            </p>
+          )}
+        </section>
+      </div>
 
       <p className="disclaimer">
-        Програма допомагає лікарю розраховувати дози. Рішення про лікування завжди приймає лікар.
+        ⚠️ Програма надана для медично-технічної допомоги ветеринарному лікарю. Остаточне рішення про дозування та схему лікування завжди приймає ветеринарний лікар.
       </p>
     </div>
   )

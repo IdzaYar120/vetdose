@@ -1,0 +1,140 @@
+{
+  "product": {
+    "trade_name": "Dexamethasone Injection 2 mg/mL",
+    "manufacturer": "Sparhawk Laboratories, Inc. (виробник); MWI / Vet One (лейблер)",
+    "substance": "Dexamethasone",
+    "form": "injection_solution",
+    "concentration_value": "2",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["cattle", "horse"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "cattle",
+      "route": "iv",
+      "indication": "первинний кетоз ВРХ; протизапальний засіб",
+      "original_text": "Bovine - DEXAMETHASONE INJECTION 2 mg/mL - 5 to 20 mg intravenously or intramuscularly. ... the parenteral dose repeated as needed.",
+      "dose_min": "5",
+      "dose_max": "20",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "повторити за потреби, фіксований інтервал у джерелі не вказаний",
+      "duration": "індивідуально, залежно від тяжкості стану",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "im",
+      "indication": "первинний кетоз ВРХ; протизапальний засіб",
+      "original_text": "Bovine - DEXAMETHASONE INJECTION 2 mg/mL - 5 to 20 mg intravenously or intramuscularly. ... the parenteral dose repeated as needed.",
+      "dose_min": "5",
+      "dose_max": "20",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "повторити за потреби, фіксований інтервал у джерелі не вказаний",
+      "duration": "індивідуально, залежно від тяжкості стану",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "horse",
+      "route": "iv",
+      "indication": "протизапальний засіб",
+      "original_text": "Equine - DEXAMETHASONE INJECTION 2 mg/mL - 2.5 to 5 mg intravenously or intramuscularly. ... the parenteral dose repeated as needed.",
+      "dose_min": "2.5",
+      "dose_max": "5",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "повторити за потреби, фіксований інтервал у джерелі не вказаний",
+      "duration": "індивідуально, залежно від тяжкості стану",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "horse",
+      "route": "im",
+      "indication": "протизапальний засіб",
+      "original_text": "Equine - DEXAMETHASONE INJECTION 2 mg/mL - 2.5 to 5 mg intravenously or intramuscularly. ... the parenteral dose repeated as needed.",
+      "dose_min": "2.5",
+      "dose_max": "5",
+      "dose_unit": "mg_per_animal",
+      "max_total_dose": null,
+      "frequency": "повторити за потреби, фіксований інтервал у джерелі не вказаний",
+      "duration": "індивідуально, залежно від тяжкості стану",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "хронічний нефрит та гіперадренокортицизм (синдром Кушинга), крім невідкладної терапії",
+      "severity": "absolute",
+      "original_text": "Except for emergency therapy, do not use in animals with chronic nephritis and hypercorticalism (Cushing's syndrome).",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "вірусні інфекції у вірусемічній стадії",
+      "severity": "absolute",
+      "original_text": "Do not use in viral infections during the viremic stage.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "телята, призначені для отримання телятини; термін виведення для передшлункових телят не встановлений",
+      "severity": "absolute",
+      "original_text": "A withdrawal period has not been established for this product in pre-ruminating calves. Do not use in calves to be processed for veal.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "застійна серцева недостатність, діабет, остеопороз (відносні протипоказання)",
+      "severity": "caution",
+      "original_text": "Existence of congestive heart failure, diabetes, and osteoporosis are relative contraindications.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "вагітність в останньому триместрі - ризик передчасних пологів, дистоції, загибелі плода, затримки посліду, метриту",
+      "severity": "caution",
+      "original_text": "Corticosteroids administered orally or parenterally to animals may induce the first stage of parturition when administered during the last trimester of pregnancy and may precipitate parturition followed by dystocia, fetal death, retained placenta, and metritis.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "дози вищі за рекомендовані можуть спричиняти минущу сонливість/млявість",
+      "severity": "caution",
+      "original_text": "Doses greater than those recommended in horses may produce a transient drowsiness or lethargy in some horses. The lethargy usually abates in 24 hours.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "синдром Кушинга при тривалому/повторному застосуванні стероїдів (з розділу побічних ефектів; доза для собак у цьому джерелі не наведена)",
+      "severity": "caution",
+      "original_text": "Cushing's syndrome in dogs has been reported in association with prolonged or repeated steroid therapy.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "DEXAMETHASONE injection, solution (2 mg/mL)",
+      "publisher": "Sparhawk Laboratories, Inc. / MWI (Vet One) / FDA DailyMed, ANADA 200-324",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=846a642a-8844-4a2a-ab13-fcfe9d5b655a",
+      "section_or_page": "INDICATIONS; ADMINISTRATION AND DOSAGE; CONTRAINDICATIONS; WARNINGS; PRECAUTIONS; SIDE EFFECTS",
+      "document_date_or_version": "Сторінка DailyMed: Updated July 30, 2024, Version 12",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Дози в джерелі - фіксовані мг НА ТВАРИНУ (не мг/кг), тому dose_unit=mg_per_animal, без жодного перерахунку. Немає жодної числової величини терміну виведення (днів) для м'яса/молока ВРХ чи коней у цьому джерелі взагалі - лише якісне застереження про передшлункових/веаль телят (внесено як контраіндикацію, а не withdrawal_period, оскільки немає числа). Офіційний розділ DOSAGE не містить дозування для собак/котів - лише розділ побічних ефектів згадує синдром Кушинга в собак; тому дозування для собак/котів дексаметазону НЕ внесено як dose_rules і позначено в 'Не знайдено' REVIEW.md - для цих видів потрібне інше джерело."
+}

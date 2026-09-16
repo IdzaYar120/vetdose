@@ -1,0 +1,67 @@
+{
+  "product": {
+    "trade_name": "Butequine Paste for Horses",
+    "manufacturer": "Vetoquinol USA, Inc.",
+    "substance": "Phenylbutazone",
+    "form": "other",
+    "concentration_value": "333.3",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["horse"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "horse",
+      "route": "po",
+      "indication": "запальні захворювання опорно-рухового апарату",
+      "original_text": "Orally - 1 to 2 g of phenylbutazone per 500 lb. (227 kg) of body weight daily. Do not exceed 4 g daily. Use a relatively high dose for the first 48 hours, then reduce gradually to a maintenance dose. Maintain lowest dose capable of producing desired clinical response.",
+      "dose_min": "4.41",
+      "dose_max": "8.82",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня (вища доза перші 48 год, далі поступово знижувати до підтримуючої)",
+      "duration": "переоцінити діагноз, якщо немає значної клінічної відповіді через 5 днів; максимум 4 г на добу незалежно від маси тіла",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "horse",
+      "condition": "алергія на препарат в анамнезі",
+      "severity": "caution",
+      "original_text": "CONTRAINDICATIONS: Use with caution in patients who have a history of drug allergy.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "коні, призначені для отримання харчової продукції людини",
+      "severity": "absolute",
+      "original_text": "WARNING: Do not use in horses intended for human consumption.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "перші ознаки шлунково-кишкового розладу, жовтяниці або дискразії крові",
+      "severity": "caution",
+      "original_text": "Stop medication at the first sign of gastrointestinal upset, jaundice, or blood dyscrasia. ... conduct routine blood counts at weekly intervals during the early phase of therapy and at intervals of two weeks thereafter.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "BUTEQUINE (phenylbutazone) Paste for Horses",
+      "publisher": "Vetoquinol USA, Inc. / FDA DailyMed, ANADA 200-266",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=ac2448b6-b7e9-47fe-9b32-0b96c7b14672",
+      "section_or_page": "ADMINISTRATION AND DOSAGE; CONTRAINDICATIONS; WARNING; PRECAUTIONS",
+      "document_date_or_version": "Друкована етикетка: Rev 01/2023; сторінка DailyMed: Revised 11/2023, Version 2",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Форма випуску - оральна паста (не входить чітко в жоден з перелічених form-варіантів схеми: tablet|injection_solution|oral_solution|powder|suspension|other) - обрано 'other', реальна форма зазначена в trade_name і concentration. Концентрація в джерелі дана як '1 г на 3 мл' (20 г на 60-мл шприц); mg_per_ml вище - арифметичний перерахунок (1000 мг / 3 мл = 333.3 мг/мл), не клінічне рішення. Доза в джерелі дана в г/500 фунтів; dose_min/dose_max - арифметичний перерахунок у мг/кг (500 фунтів = 226.8 кг, згідно з самим джерелом), оригінал у грамах/фунтах збережено в original_text. Максимум 4 г/добу - абсолютне значення, НЕ на кг маси тіла, тому не влізло в поле max_total_dose (яке має ту саму одиницю dose_unit=mg_per_kg) - зазначено текстом у полі duration, щоб не спотворити одиницю виміру. У джерелі немає жодних згадок про лошат, вагітних кобил, ниркову/печінкову недостатність чи супутнє застосування НПЗЗ - вони не додані, бо джерело мовчить. Немає withdrawal_periods - продукт прямо виключає коней для харчової продукції замість терміну виведення."
+}

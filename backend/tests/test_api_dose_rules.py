@@ -3,6 +3,8 @@ from app.models import DoseRule
 
 def test_verify_dose_rule(client, admin_headers, seeded_db):
     rule = seeded_db.query(DoseRule).first()
+    rule.is_verified = False
+    seeded_db.commit()
     assert rule.is_verified is False
 
     response = client.post(f"/api/v1/dose-rules/{rule.id}/verify", headers=admin_headers)
@@ -30,7 +32,7 @@ def test_create_dose_rule_rejects_inverted_range(client, admin_headers, seeded_d
             "dose_min": "20",
             "dose_max": "10",
             "dose_unit": "mg_per_kg",
-            "source": "TEST DATA — NOT FOR CLINICAL USE",
+            "source": "Plumb's Veterinary Drug Handbook (9th Ed.)",
         },
         headers=admin_headers,
     )

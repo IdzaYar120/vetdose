@@ -1,0 +1,81 @@
+{
+  "product": {
+    "trade_name": "Ayradia",
+    "manufacturer": "Virbac AH, Inc.",
+    "substance": "Metronidazole",
+    "form": "suspension",
+    "concentration_value": "125",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "лямбліоз (Giardia duodenalis)",
+      "original_text": "AYRADIA oral suspension is administered orally at a dose of 25 mg/kg (11.3 mg/lb) of body weight, using the supplied syringe, twice daily for five consecutive days.",
+      "dose_min": "25",
+      "dose_max": "25",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "двічі на добу",
+      "duration": "5 днів поспіль",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "відома гіперчутливість до нітроімідазольних сполук (включно з метронідазолом)",
+      "severity": "absolute",
+      "original_text": "The use of this drug is contraindicated in animals with a history of a hypersensitivity to nitroimidazole compounds, including metronidazole.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "позарегламентне (extra-label) застосування у продуктивних тварин",
+      "severity": "absolute",
+      "original_text": "Federal law prohibits the extra-label use of this drug in food-producing animals.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "порушення функції печінки",
+      "severity": "caution",
+      "original_text": "Use with caution in dogs with hepatic dysfunction.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "неврологічні побічні ефекти при високих дозах",
+      "severity": "caution",
+      "original_text": "Adverse neurologic effects have been associated with AYRADIA oral suspension use at high doses, but individual variation in sensitivity of dogs to the adverse neurologic effects of metronidazole has been reported.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "розведення, вагітність, лактація - безпека не оцінена",
+      "severity": "caution",
+      "original_text": "The safe use of this drug in dogs intended for breeding purposes and in pregnant or lactating bitches has not been evaluated.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "AYRADIA (metronidazole oral suspension) for dogs",
+      "publisher": "Virbac AH, Inc. / FDA DailyMed, NADA 141-572",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=fc79a63f-e3a3-4781-9c8f-7a128310fa6c&type=display",
+      "section_or_page": "Dosage and Administration; Contraindications; Precautions; Target Animal Safety",
+      "document_date_or_version": "Друкована етикетка: Rev. 07/2023; сторінка DailyMed: Revised 10/2023, Version 1",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Продукт зареєстрований і показаний ЛИШЕ для собак (лямбліоз); коти в джерелі згадуються лише в контексті безпечного зберігання препарату поза досяжністю тварин, НЕ як цільовий вид для лікування - котяче дозування НЕ внесено, бо джерело не дає для котів жодної дози (позначено в 'Не знайдено' REVIEW.md). Загальновживані 'типові' дози метронідазолу для собак/котів з непрофесійних сайтів (напр. GoodRx, PetMD) свідомо НЕ використані - такі джерела нижче дозволеного рівня (форуми/комерційні сайти без офіційного схвалення регулятором), заборонені правилами промту."
+}

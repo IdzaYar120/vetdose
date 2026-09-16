@@ -1,0 +1,89 @@
+{
+  "product": {
+    "trade_name": "Baytril (Taste Tabs)",
+    "manufacturer": "Elanco US Inc.",
+    "substance": "Enrofloxacin",
+    "form": "tablet",
+    "concentration_value": "22.7;68.0",
+    "concentration_unit": "mg_per_tablet",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog", "cat"],
+    "sources": ["S2"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "бактеріальні інфекції, чутливі до енрофлоксацину",
+      "original_text": "Administer orally at a rate to provide 5-20 mg/kg (2.27 to 9.07 mg/lb) of body weight. Selection of a dose within the range should be based on clinical experience, the severity of disease, and susceptibility of the pathogen.",
+      "dose_min": "5",
+      "dose_max": "20",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "раз на добу або поділено на 2 рівні дози з інтервалом 12 год",
+      "duration": "щонайменше 2-3 дні після зникнення клінічних ознак, максимум 30 днів",
+      "off_label": false,
+      "source_ref": "S2",
+      "is_verified": false
+    },
+    {
+      "species": "cat",
+      "route": "po",
+      "indication": "бактеріальні інфекції, чутливі до енрофлоксацину",
+      "original_text": "Administer orally at 5 mg/kg (2.27 mg/lb) of body weight. ... Do not exceed 5 mg/kg of body weight per day in cats.",
+      "dose_min": "5",
+      "dose_max": "5",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "раз на добу або поділено на 2 рівні дози з інтервалом 12 год",
+      "duration": "щонайменше 2-3 дні після зникнення клінічних ознак, максимум 30 днів",
+      "off_label": false,
+      "source_ref": "S2",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": null,
+      "condition": "відома гіперчутливість до хінолонів",
+      "severity": "absolute",
+      "original_text": "Enrofloxacin is contraindicated in dogs and cats known to be hypersensitive to quinolones.",
+      "source_ref": "S2"
+    },
+    {
+      "species": "dog",
+      "condition": "цуценята дрібних та середніх порід у фазі швидкого росту (2-8 місяців)",
+      "severity": "absolute",
+      "original_text": "The use of enrofloxacin is contraindicated in small and medium breeds of dogs during the rapid growth phase (between 2 and 8 months of age). The safe use of enrofloxacin has not been established in large and giant breeds during the rapid growth phase.",
+      "source_ref": "S2"
+    },
+    {
+      "species": "cat",
+      "condition": "перевищення дози 5 мг/кг/добу - ризик ретинальної токсичності",
+      "severity": "caution",
+      "original_text": "In rare instances, use of this product in cats has been associated with Retinal Toxicity. Do not exceed 5 mg/kg of body weight per day in cats. Safety in breeding or pregnant cats has not been established.",
+      "source_ref": "S2"
+    },
+    {
+      "species": null,
+      "condition": "відомі або підозрювані розлади центральної нервової системи",
+      "severity": "caution",
+      "original_text": "Quinolone-class drugs should be used with caution in animals with known or suspected Central Nervous System (CNS) disorders. In such animals, quinolones have, in rare instances, been associated with CNS stimulation which may lead to convulsive seizures.",
+      "source_ref": "S2"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S2": {
+      "title": "BAYTRIL - enrofloxacin tablet, coated (Taste Tabs, 22.7 mg and 68 mg)",
+      "publisher": "Elanco US Inc. / FDA DailyMed, NADA 140-441",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=12b5d3c7-d539-4bc2-aa47-4516c36967f3",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; CONTRAINDICATIONS; WARNINGS; PRECAUTIONS",
+      "document_date_or_version": "Мітка на етикетці: Revised January 2022; сторінка DailyMed: Updated January 24, 2025",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Продукт зареєстрований у США (FDA NADA 140-441), не перевірено в Держреєстрі ветпрепаратів України. Немає withdrawal_periods - продукт лише для собак/котів, не для продуктивних тварин. У джерелі згадується розмір таблетки 136 мг у прикладі дозування, який не відповідає переліку доступних форм випуску (22.7 мг / 68.0 мг) у розділі HOW SUPPLIED - можливо, йдеться про комбінацію кількох таблеток; це протиріччя саме в джерелі, не наша помилка, залишено без спроби 'виправити'."
+}

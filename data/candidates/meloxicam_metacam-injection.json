@@ -1,0 +1,132 @@
+{
+  "product": {
+    "trade_name": "Metacam 5 mg/mL Solution for Injection",
+    "manufacturer": "Boehringer Ingelheim Animal Health USA Inc.",
+    "substance": "Meloxicam",
+    "form": "injection_solution",
+    "concentration_value": "5",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog", "cat"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "iv",
+      "indication": "біль та запалення при остеоартриті - навантажувальна доза",
+      "original_text": "METACAM Injection should be administered initially as a single dose at 0.09 mg/lb (0.2 mg/kg) body weight intravenously (IV) or subcutaneously (SQ), followed, after 24 hours, by METACAM Oral Suspension at the daily dose of 0.045 mg/lb (0.1 mg/kg) body weight.",
+      "dose_min": "0.2",
+      "dose_max": "0.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, далі перехід на пероральну суспензію через 24 год",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "sc",
+      "indication": "біль та запалення при остеоартриті - навантажувальна доза",
+      "original_text": "METACAM Injection should be administered initially as a single dose at 0.09 mg/lb (0.2 mg/kg) body weight intravenously (IV) or subcutaneously (SQ), followed, after 24 hours, by METACAM Oral Suspension at the daily dose of 0.045 mg/lb (0.1 mg/kg) body weight.",
+      "dose_min": "0.2",
+      "dose_max": "0.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, далі перехід на пероральну суспензію через 24 год",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cat",
+      "route": "sc",
+      "indication": "післяопераційний біль при ортопедичних операціях, оваріогістеректомії, кастрації",
+      "original_text": "Administer a single, one-time subcutaneous dose of METACAM Injection to cats at a dose of 0.14 mg/lb (0.3 mg/kg) body weight. ... Do not administer a second dose of meloxicam.",
+      "dose_min": "0.3",
+      "dose_max": "0.3",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, перед операцією; повторне введення заборонене",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "cat",
+      "condition": "повторне введення мелоксикаму або інших НПЗЗ котам",
+      "severity": "absolute",
+      "original_text": "Warning: Repeated use of meloxicam in cats has been associated with acute renal failure and death. Do not administer additional injectable or oral meloxicam to cats. ... Additional doses of meloxicam or other NSAIDs in cats are contraindicated, as no safe dosage for repeated NSAID administration has been established.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "наявна ниркова дисфункція",
+      "severity": "absolute",
+      "original_text": "Do not use meloxicam in cats with pre-existing renal dysfunction.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "відома гіперчутливість до мелоксикаму",
+      "severity": "absolute",
+      "original_text": "Dogs with known hypersensitivity to meloxicam should not receive METACAM Injection.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "відома гіперчутливість до мелоксикаму",
+      "severity": "absolute",
+      "original_text": "Cats with known hypersensitivity to meloxicam should not receive METACAM Injection.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "розлади згортання крові (напр. хвороба Віллебранда)",
+      "severity": "caution",
+      "original_text": "Meloxicam is not recommended for use in dogs with bleeding disorders, as safety has not been established in dogs with these disorders.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "вагітність, розведення, лактація, вік до 6 місяців",
+      "severity": "caution",
+      "original_text": "The safe use of METACAM Injection in dogs younger than 6 months of age, dogs used for breeding, or in pregnant or lactating bitches has not been evaluated.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "розлади згортання крові",
+      "severity": "caution",
+      "original_text": "Meloxicam is not recommended for use in cats with bleeding disorders, as safety has not been established in cats with these disorders.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "вагітність, розведення, лактація, вік до 4 місяців",
+      "severity": "caution",
+      "original_text": "The safe use of METACAM Injection in cats younger than 4 months of age, cats used for breeding, or in pregnant or lactating queens has not been evaluated.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "Metacam (meloxicam) 5 mg/mL Solution for Injection",
+      "publisher": "Boehringer Ingelheim Animal Health USA Inc. / FDA DailyMed, NADA 141-219",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=ca78caf5-2b47-46c1-abec-0f925b39f455",
+      "section_or_page": "Dosage and Administration; Contraindications; Warnings; Precautions (окремі розділи Dogs / Cats)",
+      "document_date_or_version": "Мітка на етикетці: Revised 11/2023; SPL footer: Revised 3/2026, Version 10",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "FDA/US-етикетка охоплює лише собак і котів; ЕС-етикетка Metacam (EMA/VMD) також заявляє показання для великої рогатої худоби, свиней і коней з іншими дозами (за попередніми неперевіреними пошуковими фрагментами - 0.5 мг/кг ВРХ, 0.4 мг/кг свині, 0.6 мг/кг коні), але ці цифри НЕ підтверджені дослівною цитатою з реально відкритого джерела в цьому пакеті - навмисно НЕ включені як dose_rules, щоб не порушити правило 'жодних даних з пам'яті чи неперевірених фрагментів'. Потрібен окремий прохід із реальним фетчем EMA/VMD SPC для великої рогатої худоби/свиней/коней - додано в розділ 'Не знайдено' REVIEW.md. Підтримуюча пероральна доза 0.1 мг/кг після навантажувальної ін'єкції належить іншому продукту (оральна суспензія) - див. окремий файл meloxicam_metacam-oral-suspension.json."
+}

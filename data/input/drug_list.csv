@@ -1,0 +1,22 @@
+trade_name,substance,form,concentration,species,notes
+,Amoxicillin,injection_solution,,dog;cat;cattle;pig,широкий спектр; торгову назву й концентрацію визначити під час пошуку
+,Enrofloxacin,injection_solution,,dog;cat;cattle;pig;poultry,фторхінолон
+,Meloxicam,injection_solution,,dog;cat;cattle;horse;pig,"НПЗЗ; вже частково є як TEST_ дані в seed backend"
+,Carprofen,tablet,,dog,НПЗЗ
+,Ivermectin,injection_solution,,cattle;horse;pig;sheep,протипаразитарний
+,Praziquantel,tablet,,dog;cat,антигельмінтик
+,Ceftiofur,injection_solution,,cattle;pig,цефалоспорин 3-го покоління
+,Oxytetracycline,injection_solution,,cattle;pig;sheep,тетрациклін тривалої дії
+,Flunixin meglumine,injection_solution,,cattle;horse,НПЗЗ
+,Phenylbutazone,oral_solution,,horse,НПЗЗ
+,Xylazine,injection_solution,,dog;cat;cattle;horse,седація/аналгезія
+,Ketamine,injection_solution,,dog;cat;horse,анестетик; облік як препарат спецконтролю в Україні
+,Dexamethasone,injection_solution,,dog;cat;cattle;horse,кортикостероїд
+,Metronidazole,tablet,,dog;cat,антипротозойний/антибактеріальний
+,Doxycycline,tablet,,dog;cat,тетрациклін
+,Fipronil,topical,,dog;cat,ектопаразитицид
+,Selamectin,topical,,dog;cat,ендектоцид
+,Albendazole,oral_solution,,cattle;sheep,антигельмінтик
+,Penicillin G procaine,injection_solution,,cattle;pig;horse,антибіотик тривалої дії
+,Cephalexin,tablet,,dog;cat,цефалоспорин 1-го покоління
+,Butorphanol,injection_solution,,dog;cat;horse,опіоїдний анальгетик; облік як препарат спецконтролю

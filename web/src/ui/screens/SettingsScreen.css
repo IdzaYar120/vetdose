@@ -1,20 +1,31 @@
 .settings-screen {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+}
+
+.settings-screen__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .settings-screen__sync {
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .settings-screen__outcome {
   margin: 0;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .settings-screen__outcome--error {
   color: var(--warning-absolute);
+}
+
+.settings-screen__outcome--success {
+  color: var(--primary);
 }

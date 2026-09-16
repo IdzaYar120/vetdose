@@ -1,0 +1,150 @@
+{
+  "product": {
+    "trade_name": "Baytril 100",
+    "manufacturer": "Elanco US Inc.",
+    "substance": "Enrofloxacin",
+    "form": "injection_solution",
+    "concentration_value": "100",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["cattle", "pig"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "cattle",
+      "route": "sc",
+      "indication": "бактеріальна респіраторна хвороба великої рогатої худоби (BRD), одноразова терапія",
+      "original_text": "Administer, by subcutaneous injection, a single dose of 7.5-12.5 mg/kg of body weight (3.4-5.7 mL/100 lb).",
+      "dose_min": "7.5",
+      "dose_max": "12.5",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "sc",
+      "indication": "бактеріальна респіраторна хвороба великої рогатої худоби (BRD), багатоденна терапія",
+      "original_text": "Administer daily, a subcutaneous dose of 2.5-5 mg/kg of body weight (1.1-2.3 mL/100 lb). Treatment should be repeated at 24-hour intervals for three days. Additional treatments may be given on Days 4 and 5 to animals that have shown clinical improvement but not total recovery.",
+      "dose_min": "2.5",
+      "dose_max": "5",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня, з інтервалом 24 год",
+      "duration": "3 доби, за потреби до 5 діб",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "sc",
+      "indication": "контроль BRD, одноразова терапія",
+      "original_text": "Administer, by subcutaneous injection, a single dose of 7.5 mg/kg of body weight (3.4 mL/100 lb).",
+      "dose_min": "7.5",
+      "dose_max": "7.5",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "indication": "респіраторна хвороба свиней (SRD), контроль колібактеріозу",
+      "original_text": "Administer, either by intramuscular or subcutaneous (behind the ear) injection, a single dose of 7.5 mg/kg of body weight (3.4 mL/100 lb).",
+      "dose_min": "7.5",
+      "dose_max": "7.5",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово (в/м або п/ш за вухом)",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "cattle",
+      "condition": "самки молочної худоби віком від 20 місяців (включно з сухостійними) та телята, призначені для отримання телятини",
+      "severity": "absolute",
+      "original_text": "Not For Use In Female Dairy Cattle 20 Months Of Age Or Older Or In Calves To Be Processed For Veal. ... Do not use in calves to be processed for veal.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "позарегламентне (extra-label) застосування у продуктивних тварин",
+      "severity": "absolute",
+      "original_text": "Federal law prohibits the extra-label use of this drug in food-producing animals.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "відомі або підозрювані розлади центральної нервової системи",
+      "severity": "caution",
+      "original_text": "Quinolone-class drugs should be used with caution in animals with known or suspected Central Nervous System (CNS) disorders. In such animals, quinolones have, in rare instances, been associated with CNS stimulation which may lead to convulsive seizures.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "pig",
+      "condition": "свині понад ринкову вагу - довгострокові ефекти на суглобовий хрящ не визначені",
+      "severity": "caution",
+      "original_text": "The long-term effects on articular joint cartilage have not been determined in pigs above market weight.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [
+    {
+      "species": "cattle",
+      "route": "sc",
+      "food_product": "meat",
+      "days": 28,
+      "hours": null,
+      "original_text": "Animals intended for human consumption must not be slaughtered within 28 days from the last treatment.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "food_product": "meat",
+      "days": 5,
+      "hours": null,
+      "original_text": "Swine: Animals intended for human consumption must not be slaughtered within 5 days of receiving a single-injection dose.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "route": "sc",
+      "food_product": "milk",
+      "days": null,
+      "hours": null,
+      "original_text": "This product is not approved for female dairy cattle 20 months of age or older, including dry dairy cows. Use in these cattle may cause drug residues in milk and/or in calves born to these cows.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    }
+  ],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "BAYTRIL - enrofloxacin injection, solution (Baytril 100)",
+      "publisher": "Elanco US Inc. / FDA DailyMed, NADA 141-068",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=258967db-9587-4c19-b846-ac143dada99a",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; CAUTION; PRECAUTIONS; RESIDUE WARNINGS",
+      "document_date_or_version": "Мітка на етикетці: Revised February 2026; сторінка DailyMed: Updated May 7, 2026",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Продукт зареєстрований у США (FDA NADA 141-068), не перевірено в Держреєстрі ветпрепаратів України - усі терміни виведення позначені needs_local_confirmation=true. Молочний термін виведення не встановлений виробником узагалі (продукт не дозволений для дійних корів відповідного віку), тому days=null у відповідному записі - це не пропуск даних, а факт джерела. UK VMD SPC для еnrofloxacin (SPC_2580066.PDF) не вдалося прочитати - PDF повернувся як нечитабельний бінарний потік, замінено на FDA DailyMed. Дозування для свиней в джерелі дає вибір в/м або п/ш одним реченням - обрано route=im як основний, альтернативу п/ш зазначено в frequency-полі, не роздвоюючи запис."
+}

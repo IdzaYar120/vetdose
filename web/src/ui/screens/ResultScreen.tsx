@@ -29,9 +29,6 @@ interface ResultState {
   doseRule: DoseRule | null
   result: CalculationResult | null
   withdrawalPeriods: WithdrawalPeriod[]
-  /** Captured once when the calculation completes, not read fresh on every
-   * render — `Date.now()` is impure and React may re-render this component
-   * for reasons unrelated to time passing. */
   computedAt: number
 }
 
@@ -48,14 +45,6 @@ const INITIAL_STATE: ResultState = {
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
-/**
- * Route wrapper: resolves the ids from the URL against Dexie, runs the
- * calculator, records history, and delegates rendering to the pure
- * presentational components below — split out (mirroring Android's
- * `ResultScreen`/`ResultContent`/`AbsoluteContraindicationGate` split) so
- * those can be unit-tested with synthetic props, without needing a Dexie/
- * IndexedDB polyfill in the test environment.
- */
 export function ResultScreen() {
   const params = useParams<{ speciesId: string; doseRuleId: string; productId: string; weightKg: string }>()
   const [state, setState] = useState<ResultState>(INITIAL_STATE)
@@ -160,10 +149,6 @@ export function ResultScreen() {
     return () => {
       cancelled = true
     }
-    // Deliberately depends on the individual param strings, not `params`
-    // itself: `useParams()` returns a new object every render, so depending
-    // on it directly would re-run this effect (and re-record history) on
-    // every render instead of only when the route actually changes.
   }, [params.speciesId, params.doseRuleId, params.productId, params.weightKg])
 
   if (state.loading) {
@@ -212,8 +197,8 @@ export function AbsoluteContraindicationGate({
 }) {
   return (
     <div className="result-screen">
-      <div className="card result-screen__absolute-gate">
-        <h2>Абсолютне протипоказання</h2>
+      <div className="result-screen__absolute-gate">
+        <h2>⚠️ Абсолютне протипоказання</h2>
         {result.warnings
           .filter((w) => w.code === "ABSOLUTE_CONTRAINDICATION")
           .map((w, i) => (
@@ -248,28 +233,33 @@ export function ResultContent({
 
   return (
     <div className="result-screen">
-      <p className="result-screen__amount">
-        {range} {UNIT_LABELS[result.administrationUnit]}
-      </p>
+      <div className="result-screen__hero-card">
+        <span className="result-screen__hero-title">Розрахована доза</span>
+        <div className="result-screen__amount">
+          {range} {UNIT_LABELS[result.administrationUnit]}
+        </div>
+      </div>
 
-      {result.doseMin !== null && result.doseMax !== null && result.doseAmountUnit !== null && (
-        <LabeledValue
-          label="Доза діючої речовини"
-          value={
-            result.doseMin.value.eq(result.doseMax.value)
-              ? `${formatNumber(result.doseMin.value)} ${UNIT_LABELS[result.doseAmountUnit as keyof typeof UNIT_LABELS]}`
-              : `${formatNumber(result.doseMin.value)}–${formatNumber(result.doseMax.value)} ${UNIT_LABELS[result.doseAmountUnit as keyof typeof UNIT_LABELS]}`
-          }
-        />
-      )}
+      <div className="card result-screen__detail-grid">
+        {result.doseMin !== null && result.doseMax !== null && result.doseAmountUnit !== null && (
+          <LabeledValue
+            label="Доза діючої речовини"
+            value={
+              result.doseMin.value.eq(result.doseMax.value)
+                ? `${formatNumber(result.doseMin.value)} ${UNIT_LABELS[result.doseAmountUnit as keyof typeof UNIT_LABELS]}`
+                : `${formatNumber(result.doseMin.value)}–${formatNumber(result.doseMax.value)} ${UNIT_LABELS[result.doseAmountUnit as keyof typeof UNIT_LABELS]}`
+            }
+          />
+        )}
 
-      {doseRule !== null && (
-        <>
-          <LabeledValue label="Шлях введення" value={ROUTE_LABELS[doseRule.route]} />
-          {doseRule.frequency !== null && <LabeledValue label="Кратність" value={doseRule.frequency} />}
-          {doseRule.duration !== null && <LabeledValue label="Тривалість" value={doseRule.duration} />}
-        </>
-      )}
+        {doseRule !== null && (
+          <>
+            <LabeledValue label="Шлях введення" value={ROUTE_LABELS[doseRule.route]} />
+            {doseRule.frequency !== null && <LabeledValue label="Кратність" value={doseRule.frequency} />}
+            {doseRule.duration !== null && <LabeledValue label="Тривалість" value={doseRule.duration} />}
+          </>
+        )}
+      </div>
 
       {result.warnings.map((warning, i) => (
         <WarningCard key={i} warning={warning} />
@@ -277,7 +267,7 @@ export function ResultContent({
 
       {withdrawalPeriods.length > 0 && (
         <div className="card">
-          <p className="section-title">Терміни виведення</p>
+          <p className="section-title">⏱️ Терміни виведення (Каренція)</p>
           {withdrawalPeriods.map((period) => {
             const safeFrom = new Date(computedAt + period.days * DAY_MS)
             const dateStr = safeFrom.toLocaleDateString("uk-UA", {
@@ -286,9 +276,10 @@ export function ResultContent({
               year: "numeric",
             })
             return (
-              <p key={period.id}>
-                {FOOD_PRODUCT_LABELS[period.foodProduct]} — до {dateStr} ({period.days} дн.)
-              </p>
+              <div key={period.id} className="result-screen__labeled-value">
+                <span className="result-screen__label">{FOOD_PRODUCT_LABELS[period.foodProduct]}</span>
+                <span className="result-screen__value">до {dateStr} ({period.days} дн.)</span>
+              </div>
             )
           })}
         </div>
@@ -308,9 +299,13 @@ export function ResultContent({
         )}
       </div>
 
-      {doseRule !== null && <LabeledValue label="Джерело" value={doseRule.source} />}
+      {doseRule !== null && (
+        <div className="card">
+          <LabeledValue label="Джерело правила" value={doseRule.source} />
+        </div>
+      )}
 
-      <p className="disclaimer">Програма лише допомагає в розрахунках. Остаточне рішення приймає лікар.</p>
+      <p className="disclaimer">⚠️ Програма лише допомагає в розрахунках. Остаточне рішення приймає ветеринарний лікар.</p>
     </div>
   )
 }

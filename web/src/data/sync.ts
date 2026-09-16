@@ -15,16 +15,6 @@ interface SyncedDto {
   is_deleted: boolean
 }
 
-/** Upserts active rows and physically deletes rows the server marked
- * `is_deleted` — the app never shows soft-deleted rows, so there is no
- * reason to keep them locally (same policy as Android's `SyncRepository`).
- *
- * Takes `bulkPut`/`bulkDelete` as plain callbacks bound at the call site
- * (rather than a Dexie `Table<Entity, "id">` parameter): Dexie's table types
- * rely on mapped/conditional types keyed off a literal primary-key property
- * name, which do not resolve for a generic `Entity` type parameter. Calling
- * the real, concretely-typed table methods through a closure sidesteps that
- * without weakening type safety at the call site. */
 async function applyChanges<Dto extends SyncedDto, Entity>(
   rows: Dto[],
   toEntity: (dto: Dto) => Entity,
@@ -41,19 +31,25 @@ async function applyChanges<Dto extends SyncedDto, Entity>(
   }
 }
 
-/** Runs one incremental sync against `/api/v1/sync` and applies the result to
- * Dexie in a single transaction. Safe to call repeatedly (periodic + manual
- * "sync now", mirroring the Android `SyncWorker`); a stage-7 screen is
- * expected to drive this from a button and/or a periodic timer. */
-export async function runSync(): Promise<void> {
+export async function runSync(forceFullSync: boolean = false): Promise<void> {
   const baseUrl = await getServerBaseUrl()
-  const since = await getLastSyncTime()
+  const since = forceFullSync ? null : await getLastSyncTime()
   const response = await fetchSync(baseUrl, since)
 
   await db.transaction(
     "rw",
     [db.species, db.substances, db.products, db.doseRules, db.contraindications, db.withdrawalPeriods],
     async () => {
+      if (since === null) {
+        await Promise.all([
+          db.species.clear(),
+          db.substances.clear(),
+          db.products.clear(),
+          db.doseRules.clear(),
+          db.contraindications.clear(),
+          db.withdrawalPeriods.clear(),
+        ])
+      }
       await applyChanges(
         response.species,
         speciesDtoToEntity,

@@ -15,14 +15,6 @@ interface ProductSearchScreenProps {
   onClose: () => void
 }
 
-/**
- * Rendered as a full-screen overlay from `CalculateScreen`, not as a router
- * route: a real navigation to `/search/...` and back would unmount and
- * remount `CalculateScreen`, discarding its in-progress species/weight
- * selection (React Router has no equivalent of Android's back-stack-retained
- * ViewModel). Keeping this as a sibling element the parent shows/hides
- * avoids that entirely.
- */
 export function ProductSearchScreen({ speciesId, onProductChosen, onClose }: ProductSearchScreenProps) {
   const [query, setQuery] = useState("")
   const [speciesFilterEnabled, setSpeciesFilterEnabled] = useState(true)
@@ -54,31 +46,38 @@ export function ProductSearchScreen({ speciesId, onProductChosen, onClose }: Pro
         <h1>Пошук препарату</h1>
       </header>
       <div className="search-screen">
-        <input
-          type="search"
-          placeholder="Назва препарату або діюча речовина"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          autoFocus
-        />
+        <div className="field">
+          <input
+            type="search"
+            placeholder="🔍 Назва препарату або діюча речовина..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            autoFocus
+          />
+        </div>
 
         {species != null && (
-          <button
-            type="button"
-            className={`chip${speciesFilterEnabled ? " chip--selected" : ""}`}
-            onClick={() => setSpeciesFilterEnabled((v) => !v)}
-          >
-            {speciesFilterEnabled ? `Вид: ${species.nameUk}` : "Усі види"}
-          </button>
+          <div>
+            <button
+              type="button"
+              className={`chip${speciesFilterEnabled ? " chip--selected" : ""}`}
+              onClick={() => setSpeciesFilterEnabled((v) => !v)}
+            >
+              {speciesFilterEnabled ? `Вид: ${species.nameUk}` : "Усі види"}
+            </button>
+          </div>
         )}
 
         {isEmpty ? (
-          <div className="empty-state">Нічого не знайдено</div>
+          <div className="empty-state">
+            <span>🔎</span>
+            <span>Нічого не знайдено</span>
+          </div>
         ) : (
           <div className="search-screen__list">
             {favorites.length > 0 && (
               <>
-                <p className="search-screen__section">Обрані</p>
+                <p className="search-screen__section">★ Обрані препарати</p>
                 {favorites.map((product) => (
                   <ProductRow
                     key={`fav_${product.id}`}
@@ -123,16 +122,16 @@ function ProductRow({
   onFavoriteToggle: () => void
 }) {
   return (
-    <div className="card search-screen__row">
+    <div className="search-screen__card">
       <button type="button" className="search-screen__row-main" onClick={onClick}>
-        <span>{product.tradeName}</span>
+        <span className="search-screen__trade-name">{product.tradeName}</span>
         {product.manufacturer !== null && (
           <span className="search-screen__manufacturer">{product.manufacturer}</span>
         )}
       </button>
       <button
         type="button"
-        className="search-screen__favorite"
+        className={`search-screen__favorite${isFavorite ? " search-screen__favorite--active" : ""}`}
         onClick={onFavoriteToggle}
         aria-label={isFavorite ? "Прибрати з обраних" : "Додати в обрані"}
       >

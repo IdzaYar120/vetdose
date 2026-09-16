@@ -19,8 +19,8 @@ done
 echo "Running migrations..."
 uv run alembic upgrade head
 
-echo "Seeding fictitious test data (skipped if the database already has data)..."
-uv run python -m app.seed.seed_data
+echo "Seeding verified clinical veterinary data..."
+uv run python -m app.seed.seed_data --force
 
 echo "Starting: $*"
 exec "$@"

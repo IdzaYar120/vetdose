@@ -1,0 +1,158 @@
+{
+  "product": {
+    "trade_name": "Agrimycin 200",
+    "manufacturer": "Huvepharma, Inc.",
+    "substance": "Oxytetracycline (as dihydrate)",
+    "form": "injection_solution",
+    "concentration_value": "200",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["cattle", "pig"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "cattle",
+      "route": "sc",
+      "indication": "бактеріальна пневмонія (Pasteurella spp.) у телят/молодняку, коли повторне лікування непрактичне; інфекційний кератокон'юнктивіт (pinkeye) - одноразова висока доза",
+      "original_text": "A single dosage of 9 mg of AGRIMYCIN 200 per lb of body weight administered subcutaneously is recommended in the treatment of the following conditions: 1) bacterial pneumonia caused by Pasteurella spp. (shipping fever)... 2) infectious bovine keratoconjunctivitis (pinkeye).",
+      "dose_min": "19.84",
+      "dose_max": "19.84",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "sc",
+      "indication": "загальна бактеріальна інфекція, багатоденний режим; важкий копитний гниль (foot rot) - вища доза в діапазоні",
+      "original_text": "AGRIMYCIN 200 can also be administered by subcutaneous or intravenous injection at a level of 3-5 mg of oxytetracycline per lb of body weight per day. In the treatment of severe foot rot and advanced cases of other indicated diseases, a dosage level of 5 mg/lb of body weight per day is recommended. Treatment should be continued 24-48 hours following remission of disease signs; however, not to exceed a total of 4 consecutive days.",
+      "dose_min": "6.61",
+      "dose_max": "11.02",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня",
+      "duration": "24-48 год після зникнення ознак, не більше 4 діб загалом",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "indication": "бактеріальна пневмонія (Pasteurella multocida), коли повторне лікування непрактичне - одноразова висока доза",
+      "original_text": "A single dosage of 9 mg of AGRIMYCIN 200 per lb of body weight administered intramuscularly in the neck region is recommended in the treatment of bacterial pneumonia caused by Pasteurella multocida in swine.",
+      "dose_min": "19.84",
+      "dose_max": "19.84",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "indication": "загальна бактеріальна інфекція, багатоденний режим",
+      "original_text": "AGRIMYCIN 200 can also be administered by intramuscular injection at a level of 3-5 mg of oxytetracycline per lb of body weight per day. Treatment should be continued 24-48 hours following remission of disease signs; however, not to exceed a total of 4 consecutive days.",
+      "dose_min": "6.61",
+      "dose_max": "11.02",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "щодня",
+      "duration": "24-48 год після зникнення ознак, не більше 4 діб загалом",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "indication": "периpartum контроль діареї поросят (свиноматки)",
+      "original_text": "For sows, administer once intramuscularly in the neck region 3 mg of oxytetracycline per lb of body weight approximately 8 hours before farrowing or immediately after completion of farrowing.",
+      "dose_min": "6.61",
+      "dose_max": "6.61",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, за 8 год до опоросу або одразу після",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "cattle",
+      "condition": "швидке внутрішньовенне введення",
+      "severity": "caution",
+      "original_text": "Rapid intravenous administration may result in animal collapse. Oxytetracycline should be administered intravenously slowly over a period of at least 5 minutes.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "супутнє застосування з пеніциліном",
+      "severity": "caution",
+      "original_text": "Since bacteriostatic drugs may interfere with the bactericidal action of penicillin, it is advisable to avoid giving AGRIMYCIN 200 in conjunction with penicillin.",
+      "source_ref": "S1"
+    },
+    {
+      "species": null,
+      "condition": "ризик анафілаксії або серцево-судинного колапсу",
+      "severity": "caution",
+      "original_text": "At the first sign of any adverse reaction, discontinue use of the product and seek the advice of your veterinarian. Some of the reactions may be attributed either to anaphylaxis (an allergic reaction) or to cardiovascular collapse of unknown cause.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [
+    {
+      "species": "cattle",
+      "route": "sc",
+      "food_product": "meat",
+      "days": 28,
+      "hours": null,
+      "original_text": "Discontinue treatment at least 28 days prior to slaughter of cattle and swine.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "pig",
+      "route": "im",
+      "food_product": "meat",
+      "days": 28,
+      "hours": null,
+      "original_text": "Discontinue treatment at least 28 days prior to slaughter of cattle and swine.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "route": "sc",
+      "food_product": "milk",
+      "days": null,
+      "hours": 96,
+      "original_text": "Milk taken from animals during treatment and for 96 hours after the last treatment must not be used for food.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    }
+  ],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "AGRIMYCIN 200 - oxytetracycline injection",
+      "publisher": "Huvepharma, Inc. / FDA DailyMed, ANADA 200-128",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3644ca73-1257-4355-817b-37fced33eef4",
+      "section_or_page": "DOSAGE AND ADMINISTRATION; WARNINGS; PRECAUTIONS",
+      "document_date_or_version": "SPL Updated/effective date: March 19, 2024; сторінка DailyMed опублікована Version 4, April 10, 2024",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Вівці (sheep) НЕ входять до переліку видів цього продукту - джерело прямо перелічує лише ВРХ (включно з передшлунковими/веаль телятами) і свиней; дозування для овець тут відсутнє навмисно (не екстрапольовано). Дози в джерелі дані виключно в мг/фунт; dose_min/dose_max - арифметичний перерахунок (коефіцієнт 2.2046), оригінал у фунтах збережено в original_text. У джерела немає розділу 'CONTRAINDICATIONS' взагалі (лише WARNINGS/PRECAUTIONS/CAUTION) - тому жоден запис не позначений severity=absolute, це відповідає структурі самого джерела, а не наша недбалість. Молочний і м'ясний терміни виведення дані одним спільним реченням для ВРХ і свиней одразу (28 днів) - внесено як два окремі записи (по одному на вид) з однаковим значенням і цитатою."
+}

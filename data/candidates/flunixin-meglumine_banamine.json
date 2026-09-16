@@ -1,0 +1,190 @@
+{
+  "product": {
+    "trade_name": "Banamine",
+    "manufacturer": "Intervet Inc. d/b/a Merck Animal Health",
+    "substance": "Flunixin meglumine",
+    "form": "injection_solution",
+    "concentration_value": "50",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["horse", "cattle"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "horse",
+      "route": "iv",
+      "indication": "запальні захворювання опорно-рухового апарату",
+      "original_text": "The recommended dose for musculoskeletal disorders is 0.5 mg per pound (1 mL/100 lbs) of body weight once daily. Treatment may be given by intravenous or intramuscular injection and repeated for up to 5 days.",
+      "dose_min": "1.10",
+      "dose_max": "1.10",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "раз на добу",
+      "duration": "до 5 днів",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "horse",
+      "route": "im",
+      "indication": "запальні захворювання опорно-рухового апарату",
+      "original_text": "The recommended dose for musculoskeletal disorders is 0.5 mg per pound (1 mL/100 lbs) of body weight once daily. Treatment may be given by intravenous or intramuscular injection and repeated for up to 5 days.",
+      "dose_min": "1.10",
+      "dose_max": "1.10",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "раз на добу",
+      "duration": "до 5 днів",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "horse",
+      "route": "iv",
+      "indication": "коліки (вісцеральний біль)",
+      "original_text": "The recommended dose for the alleviation of pain associated with equine colic is 0.5 mg per pound of body weight. Intravenous administration is recommended for prompt relief. Treatment may be repeated when signs of colic recur.",
+      "dose_min": "1.10",
+      "dose_max": "1.10",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "за потреби, повторити при рецидиві ознак кольки",
+      "duration": "одна доза, повторення за клінічними показаннями",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "iv",
+      "indication": "пірексія при респіраторній хворобі ВРХ (BRD) та ендотоксемії",
+      "original_text": "The recommended dose... is 1.1 to 2.2 mg/kg (0.5 to 1 mg/lb) of body weight given by slow intravenous administration either once a day as a single dose or divided into two doses administered at 12-hour intervals for up to 3 days. The total daily dose should not exceed 2.2 mg/kg (1.0 mg/lb) of body weight.",
+      "dose_min": "1.1",
+      "dose_max": "2.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": "2.2",
+      "frequency": "раз на добу або поділено на 2 дози з інтервалом 12 год",
+      "duration": "до 3 днів",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cattle",
+      "route": "iv",
+      "indication": "гострий мастит",
+      "original_text": "The recommended dose for acute bovine mastitis is 2.2 mg/kg (1 mg/lb; 2 ml per 100 lbs) of body weight given once by intravenous administration.",
+      "dose_min": "2.2",
+      "dose_max": "2.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "horse",
+      "condition": "відома гіперчутливість до флуніксину меглуміну",
+      "severity": "absolute",
+      "original_text": "Do not use in horses showing hypersensitivity to flunixin meglumine.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "відома гіперчутливість до флуніксину меглуміну",
+      "severity": "absolute",
+      "original_text": "Do not use in animals showing hypersensitivity to flunixin meglumine.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "у межах 48 год до очікуваного отелення",
+      "severity": "absolute",
+      "original_text": "Do not use BANAMINE (flunixin meglumine injection) within 48 hours of expected parturition. The use of flunixin can delay parturition and prolong labor which may increase the risk of stillbirth.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "внутрішньом'язове введення ВРХ - препарат схвалений лише для внутрішньовенного застосування",
+      "severity": "absolute",
+      "original_text": "Approved only for intravenous administration in cattle. Intramuscular administration has resulted in violative residues in the edible tissues of cattle sent to slaughter.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "коні, призначені для отримання харчової продукції людини",
+      "severity": "absolute",
+      "original_text": "Not for use in horses intended for food.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "ниркова недостатність або підозра на виразку шлунка",
+      "severity": "caution",
+      "original_text": "Use judiciously when renal impairment or gastric ulceration are suspected.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "бики, призначені для розведення",
+      "severity": "caution",
+      "original_text": "Do not use in bulls intended for breeding, as reproductive effects of BANAMINE... in these classes of cattle have not been investigated.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "horse",
+      "condition": "внутрішньоартеріальне введення",
+      "severity": "caution",
+      "original_text": "Intra-arterial injection should be avoided.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "condition": "сухостійні молочні корови та телята, призначені для отримання телятини",
+      "severity": "absolute",
+      "original_text": "Only for Intravenous Use in Beef and Dairy Cattle. Not for Use in Dry Dairy Cows and Veal Calves.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [
+    {
+      "species": "cattle",
+      "route": "iv",
+      "food_product": "meat",
+      "days": 4,
+      "hours": null,
+      "original_text": "Cattle must not be slaughtered for human consumption within 4 days of the last treatment.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    },
+    {
+      "species": "cattle",
+      "route": "iv",
+      "food_product": "milk",
+      "days": null,
+      "hours": 36,
+      "original_text": "Milk that has been taken during treatment and for 36 hours after the last treatment must not be used for food.",
+      "needs_local_confirmation": true,
+      "source_ref": "S1"
+    }
+  ],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "BANAMINE - flunixin meglumine injection",
+      "publisher": "Intervet Inc. d/b/a Merck Animal Health / FDA DailyMed, NADA 101-479",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2e531abd-b3ec-4819-81a3-f51e6867658c",
+      "section_or_page": "DOSE AND ADMINISTRATION; CONTRAINDICATIONS; RESIDUE WARNING; PRECAUTIONS",
+      "document_date_or_version": "Друкована етикетка: Rev. 11/2021; сторінка DailyMed: Updated November 15, 2024, Version 6",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Джерело прямо підтверджує відому клінічну проблему: в/м введення у ВРХ призводить до незаконних залишків у їстівних тканинах - препарат схвалений для ВРХ ЛИШЕ внутрішньовенно; для коней дозволені і в/в, і в/м. 'Not for use in dry dairy cows' (сухостійні корови) - продукт прямо виключений для цієї категорії, а не дає для неї withdrawal_period; не внесено окремим записом withdrawal, а не контраіндикацією - розглядайте як фактичну заборону застосування. Термін виведення для передшлункових телят не встановлений, для телят на телятину - заборонено (вже відображено в contraindications для 'телят на телятину' в іншому файлі; тут окремо не дублюється, оскільки Banamine label не містить телячого-специфічного речення в тому вигляді, що фетчнутий текст навів)."
+}

@@ -1,0 +1,96 @@
+{
+  "product": {
+    "trade_name": "Metacam Oral Suspension 0.5 mg/mL",
+    "manufacturer": "Boehringer Ingelheim Animal Health USA Inc.",
+    "substance": "Meloxicam",
+    "form": "suspension",
+    "concentration_value": "0.5",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "біль та запалення при остеоартриті - навантажувальна доза, 1-й день",
+      "original_text": "METACAM Oral Suspension should be administered initially at 0.09 mg/lb (0.2 mg/kg) body weight only on the first day of treatment.",
+      "dose_min": "0.2",
+      "dose_max": "0.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово, лише в 1-й день лікування",
+      "duration": "1 день",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "біль та запалення при остеоартриті - підтримуюча доза, з 2-го дня",
+      "original_text": "For all treatments after day 1, METACAM Oral Suspension should be administered once daily at a dose of 0.045 mg/lb (0.1 mg/kg).",
+      "dose_min": "0.1",
+      "dose_max": "0.1",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "раз на добу",
+      "duration": "найкоротший ефективний курс за клінічною відповіддю, без фіксованого максимуму в джерелі",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "cat",
+      "condition": "застосування у котів",
+      "severity": "absolute",
+      "original_text": "Do not use METACAM Oral Suspension in cats. Acute renal failure and death have been associated with the use of meloxicam in cats.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "відома гіперчутливість до мелоксикаму",
+      "severity": "absolute",
+      "original_text": "Dogs with known hypersensitivity to meloxicam should not receive METACAM Oral Suspension.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "розлади згортання крові",
+      "severity": "caution",
+      "original_text": "Meloxicam is not recommended for use in dogs with bleeding disorders, as safety has not been established in dogs with these disorders.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "вагітність, розведення, лактація, вік до 6 місяців",
+      "severity": "caution",
+      "original_text": "The safe use of METACAM Oral Suspension in dogs younger than 6 months of age, dogs used for breeding, or in pregnant or lactating dogs has not been evaluated.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "супутнє застосування інших НПЗЗ або кортикостероїдів",
+      "severity": "caution",
+      "original_text": "Since NSAIDs possess the potential to induce gastrointestinal ulcerations and/or perforations, concomitant use with other anti-inflammatory drugs... should be avoided.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "Metacam (meloxicam oral suspension) 0.5 mg/mL",
+      "publisher": "Boehringer Ingelheim Animal Health USA Inc. / FDA DailyMed, NADA 141-213",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=ed2227e6-8c69-4057-a8b2-94f74cb11264",
+      "section_or_page": "Dosage and Administration; Contraindications; Precautions",
+      "document_date_or_version": "Мітка на етикетці: Revised 06/2022; SPL footer: Revised 5/2025, Version 13",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Продукт лише для собак - коти прямо виключені. Немає withdrawal_periods - продукт не для продуктивних тварин. Для дрібних собак (<0.90 кг) в джерелі є окреме дозування крапельницею (2 краплі/фунт = 5 крапель/кг для концентрації 0.5 мг/мл) - не перенесено в dose_rules, оскільки це не мг/кг-доза, а інструкція з дозування піпеткою; варто додати вручну лікарем за потреби."
+}

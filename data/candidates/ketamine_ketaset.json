@@ -1,0 +1,82 @@
+{
+  "product": {
+    "trade_name": "Ketaset",
+    "manufacturer": "Zoetis Inc.",
+    "substance": "Ketamine (as hydrochloride)",
+    "form": "injection_solution",
+    "concentration_value": "100",
+    "concentration_unit": "mg_per_ml",
+    "registered_in_ukraine": false,
+    "registered_species": ["cat"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "cat",
+      "route": "im",
+      "indication": "рестрейн (фіксація тварини)",
+      "original_text": "A dose of 11 mg/kg (5 mg/lb) is recommended to produce restraint.",
+      "dose_min": "11",
+      "dose_max": "11",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово",
+      "duration": "одна доза",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "cat",
+      "route": "im",
+      "indication": "анестезія для діагностичних або малих хірургічних процедур, що не потребують міорелаксації",
+      "original_text": "Dosages from 22 to 33 mg/kg (10 to 15 mg/lb) produce anesthesia that is suitable for diagnostic or minor surgical procedures that do not require skeletal muscle relaxation. ... In cats, doses in excess of 50 mg/kg during any single procedure should not be used.",
+      "dose_min": "22",
+      "dose_max": "33",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": "50",
+      "frequency": "одноразово",
+      "duration": "одна доза (не перевищувати 50 мг/кг за одну процедуру)",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "cat",
+      "condition": "ниркова або печінкова недостатність",
+      "severity": "absolute",
+      "original_text": "KETASET is contraindicated in cats and subhuman primates suffering from renal or hepatic insufficiency. KETASET is detoxified by the liver and excreted by the kidneys; therefore, any preexistent hepatic or renal pathology or impairment of function can be expected to result in prolonged anesthesia; related fatalities have been reported.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "стимуляція звуком або дотиком у період виходу з наркозу",
+      "severity": "caution",
+      "original_text": "To reduce the incidence of emergence reactions, animals should not be stimulated by sound or handling during the recovery period.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "супутнє застосування седативних засобів/інших анестетиків - підвищений ризик апное, зупинки дихання, зупинки серця",
+      "severity": "caution",
+      "original_text": "Apnea, respiratory arrest, cardiac arrest and death have occasionally been reported with ketamine used alone, and more frequently when used in conjunction with sedatives or other anesthetics.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "KETASET - ketamine hydrochloride injection",
+      "publisher": "Zoetis Inc. / FDA DailyMed, NADA 043-304",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00931aa1-4b45-41f2-ae2f-f966d308c518",
+      "section_or_page": "INDICATIONS; DOSAGE AND ADMINISTRATION; CONTRAINDICATIONS; PRECAUTIONS",
+      "document_date_or_version": "Друкована етикетка: Revised June 2019; сторінка DailyMed: Updated October 1, 2019, Version 2",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "КЕТАМІН - речовина списку III (DEA Schedule CIII) за федеральним законодавством США; в Україні обіг кетаміну регулюється як препарату предметно-кількісного обліку - це питання зберігання/обліку в клініці, поза межами самого дозового калькулятора, але лікар має враховувати цей режим окремо. Це джерело офіційно схвалене ЛИШЕ для котів і 'subhuman primates' (примати не входять у перелік видів проєкту cat|dog|cattle|pig|horse|sheep|goat|poultry|rabbit, тому їхнє дозування не внесено як dose_rules). Початковий drug_list.csv припускав кетамін і для собак/коней (поширена практика), але ЦЕ КОНКРЕТНЕ джерело собачого чи кінського дозування НЕ містить - вони прямо позначені 'Not intended'/відсутні в INDICATIONS - позначено в 'Не знайдено' REVIEW.md."
+}

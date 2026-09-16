@@ -1,0 +1,103 @@
+{
+  "product": {
+    "trade_name": "Rimadyl Chewable Tablets",
+    "manufacturer": "Zoetis LLC / Zoetis Inc.",
+    "substance": "Carprofen",
+    "form": "tablet",
+    "concentration_value": "25;75;100",
+    "concentration_unit": "mg_per_tablet",
+    "registered_in_ukraine": false,
+    "registered_species": ["dog"],
+    "sources": ["S1"]
+  },
+  "dose_rules": [
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "біль та запалення (остеоартрит, післяопераційний біль) - одноразово на добу",
+      "original_text": "The recommended dosage for oral administration to dogs is 2 mg/lb of body weight daily. The total daily dose may be administered as 2 mg/lb of body weight once daily or divided and administered as 1 mg/lb twice daily.",
+      "dose_min": "4.41",
+      "dose_max": "4.41",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "одноразово на добу",
+      "duration": "найнижча ефективна доза, найкоротший курс відповідно до клінічної відповіді; для післяопераційного болю до 3 днів (м'які тканини) або 4 днів (ортопедія) за даними дослідження ефективності",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    },
+    {
+      "species": "dog",
+      "route": "po",
+      "indication": "біль та запалення (остеоартрит, післяопераційний біль) - двічі на добу",
+      "original_text": "The total daily dose may be administered as 2 mg/lb of body weight once daily or divided and administered as 1 mg/lb twice daily.",
+      "dose_min": "2.2",
+      "dose_max": "2.2",
+      "dose_unit": "mg_per_kg",
+      "max_total_dose": null,
+      "frequency": "двічі на добу",
+      "duration": "найнижча ефективна доза, найкоротший курс відповідно до клінічної відповіді",
+      "off_label": false,
+      "source_ref": "S1",
+      "is_verified": false
+    }
+  ],
+  "contraindications": [
+    {
+      "species": "dog",
+      "condition": "відома гіперчутливість до карпрофену в анамнезі",
+      "severity": "absolute",
+      "original_text": "Rimadyl should not be used in dogs exhibiting previous hypersensitivity to carprofen.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "cat",
+      "condition": "застосування у котів",
+      "severity": "absolute",
+      "original_text": "For use in dogs only. Do not use in cats.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "розлади згортання крові (напр. хвороба Віллебранда)",
+      "severity": "caution",
+      "original_text": "Rimadyl is not recommended for use in dogs with bleeding disorders (e.g., Von Willebrand's disease), as safety has not been established in dogs with these disorders.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "вік до 6 тижнів, вагітність, розведення, лактація",
+      "severity": "caution",
+      "original_text": "The safe use of Rimadyl in animals less than 6 weeks of age, pregnant dogs, dogs used for breeding purposes, or in lactating bitches has not been established.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "ниркова, серцево-судинна або печінкова дисфункція, зневоднення, супутня діуретична терапія",
+      "severity": "caution",
+      "original_text": "Patients at greatest risk for renal toxicity are those that are dehydrated, on concomitant diuretic therapy, or those with renal, cardiovascular, and/or hepatic dysfunction.",
+      "source_ref": "S1"
+    },
+    {
+      "species": "dog",
+      "condition": "супутнє застосування інших НПЗЗ або кортикостероїдів",
+      "severity": "caution",
+      "original_text": "Concomitant use of Rimadyl with other anti-inflammatory drugs, such as other NSAIDs or corticosteroids, should be avoided because of the potential increase of adverse reactions, including gastrointestinal ulcerations and/or perforations.",
+      "source_ref": "S1"
+    }
+  ],
+  "withdrawal_periods": [],
+  "conflicts": [],
+  "sources": {
+    "S1": {
+      "title": "RIMADYL - carprofen tablet, chewable",
+      "publisher": "Zoetis LLC / Zoetis Inc. / FDA DailyMed, NADA 141-111",
+      "level": 2,
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dbc05493-d1cc-4c00-be6b-d1e3352273fd",
+      "section_or_page": "Dosage and Administration; Contraindications; Warnings; Precautions",
+      "document_date_or_version": "Мітка на етикетці: Revised April 2019; сторінка DailyMed: Updated February 6, 2024",
+      "retrieved_at": "2026-09-16"
+    }
+  },
+  "agent_notes": "Доза в джерелі дана виключно в мг/фунт (мг/кг у самому тексті етикетки НЕ вказано); dose_min/dose_max вище - арифметичний перерахунок (1 фунт = 0.453592 кг, коефіцієнт 2.2046), а не клінічна екстраполяція; оригінальний текст з фунтами збережено в original_text. max_total_dose навмисно null - етикетка не дає окремого числового максимуму в мг/кг, лише описову інструкцію 'lowest effective dose for the shortest duration'. Немає withdrawal_periods - продукт лише для собак-компаньйонів."
+}
