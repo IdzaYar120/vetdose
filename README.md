@@ -5,7 +5,7 @@
 протипоказаннями та термінами виведення для продуктивних тварин.
 
 Монорепозиторій: `backend` (FastAPI), `android` (Kotlin/Compose),
-`web` (React PWA, пізніше), `shared` (спільні тест-кейси калькулятора доз).
+`web` (React PWA), `shared` (спільні тест-кейси калькулятора доз).
 
 ## ⚠️ Дані
 
@@ -27,7 +27,11 @@
 - **Етап 5 (готово):** Android — усі екрани (розрахунок, пошук препарату,
   результат, історія, налаштування) з ViewModel, обрані препарати,
   Compose UI-тести для екрана результату й попереджень.
-- Етапи 6–8 (Web PWA, фіналізація) — у розробці.
+- **Етап 6 (готово):** Web — каркас (Vite + React + TypeScript), третій
+  незалежний порт калькулятора (`doseCalculator.ts`, decimal.js), офлайн-дані
+  через Dexie (IndexedDB), синхронізація з `/api/v1/sync`, базова конфігурація
+  PWA (`vite-plugin-pwa`).
+- Етапи 7–8 (Web-екрани, iOS-особливості, фіналізація) — у розробці.
 
 ## Запуск через Docker (найшвидший шлях)
 
@@ -177,11 +181,50 @@ Kotlin-режимом AGP 9. Тому версії в `gradle/libs.versions.toml
 найновіша 9.7.x: AGP 8.x несумісний із внутрішніми API, прибраними в
 Gradle 9.6).
 
+## Web
+
+Стек: Vite, React, TypeScript, `decimal.js` (розрахунки), Dexie (IndexedDB),
+`vite-plugin-pwa`. `domain/calculator/doseCalculator.ts` — третій незалежний
+порт `backend/app/services/calculator.py` (той самий алгоритм, округлення,
+коди попереджень і текст пояснень українською).
+
+```bash
+cd web
+npm install
+npm run dev          # http://localhost:5173
+npm run test          # Vitest, включно з shared/calculation_test_cases.json
+npm run typecheck
+npm run lint
+npm run build         # також генерує service worker PWA
+```
+
+Бекенд за замовчуванням дозволяє CORS з `http://localhost:5173` (Vite dev).
+
+### Дані й синхронізація (Етап 6)
+
+- **Dexie (IndexedDB)** — офлайн-джерело правди для UI (`data/local/`): одна
+  таблиця на кожну з 6 сутностей backend плюс `settings` (адреса сервера,
+  курсор `since`) — вебеквівалент Android DataStore. Видалені на сервері
+  записи фізично видаляються локально, як і в Android.
+- **`data/remote/`** — типи DTO (snake_case, 1:1 з Pydantic-схемами) і
+  єдиний виклик API, `GET /api/v1/sync`; пошук і розрахунок дози працюють
+  повністю офлайн проти Dexie.
+- **`data/sync.ts`** — `runSync()` застосовує відповідь `/sync` в одній
+  Dexie-транзакції (upsert активних рядків, видалення позначених
+  `is_deleted`), потім просуває курсор `since`.
+- Перевірено проти реального backend у справжньому браузері (Playwright, не
+  лише Vitest): повна синхронізація наповнює всі 6 таблиць, дані переживають
+  перезавантаження сторінки, повторна (інкрементна) синхронізація не
+  дублює записи.
+
+Екранів ще немає (Етап 7) — `App.tsx` наразі мінімальна діагностична
+сторінка, що запускає `runSync()` і показує кількість записів у кожній
+таблиці.
+
 ## Спільні тест-кейси калькулятора
 
 [`shared/calculation_test_cases.json`](shared/calculation_test_cases.json) —
 35+ кейсів (вхід → очікуваний результат), які проганяються проти
-`backend/app/services/calculator.py` (pytest) і `DoseCalculator.kt`
-(JUnit), а пізніше — і проти TypeScript-реалізації калькулятора, щоб
-гарантувати однаковий розрахунок на сервері, в Android-програмі та у
-вебзастосунку.
+`backend/app/services/calculator.py` (pytest), `DoseCalculator.kt` (JUnit) і
+`web/src/domain/calculator/doseCalculator.ts` (Vitest), щоб гарантувати
+однаковий розрахунок на сервері, в Android-програмі та у вебзастосунку.
