@@ -2,6 +2,12 @@
   --text: #1f2933;
   --text-muted: #6b7280;
   --bg: #fff;
+  --surface: #f3f4f6;
+  --border: #d1d5db;
+  --accent: #0f766e;
+  --accent-contrast: #fff;
+  --warning-absolute: #d32f2f;
+  --warning-caution: #f5a623;
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
 
@@ -20,6 +26,10 @@
     --text: #e5e7eb;
     --text-muted: #9ca3af;
     --bg: #16171d;
+    --surface: #1f2028;
+    --border: #2e303a;
+    --accent: #2dd4bf;
+    --accent-contrast: #0b1210;
   }
 }
 
@@ -28,6 +38,11 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 600;
+}
+
+button {
+  font-family: inherit;
 }

@@ -8,7 +8,7 @@ class Settings(BaseSettings):
 
     database_url: str = "postgresql+psycopg://vetdose:vetdose@localhost:5432/vetdose"
     admin_api_key: str = "change-me"
-    cors_origins: list[str] = ["http://localhost:5173"]
+    cors_origins: list[str] = ["http://localhost:5173", "http://localhost:8080"]
     environment: str = "development"
 
 

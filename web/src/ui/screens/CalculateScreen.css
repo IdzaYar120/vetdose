@@ -1,0 +1,24 @@
+.calculate-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.calculate-screen__species-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.calculate-screen__product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.calculate-screen__warning {
+  margin-top: 8px;
+  background: rgba(245, 166, 35, 0.15);
+}

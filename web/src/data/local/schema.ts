@@ -98,3 +98,26 @@ export interface SettingEntity {
   key: string
   value: string
 }
+
+/**
+ * Local-only tables (never synced, never touched by `runSync()`) — the web
+ * equivalent of Android's `calculation_history` / `favorite_product` Room
+ * tables added in its Stage 5.
+ */
+
+/** Stores a calculation's *inputs*, not its result: the calculator is pure
+ * and cheap, so the result is always recomputed on display. `weightKg`
+ * stays a string for the same reason every other Decimal field does. */
+export interface CalculationHistoryEntity {
+  id: string
+  timestamp: number
+  speciesId: string
+  doseRuleId: string
+  productId: string
+  weightKg: string
+}
+
+export interface FavoriteProductEntity {
+  productId: string
+  addedAt: number
+}

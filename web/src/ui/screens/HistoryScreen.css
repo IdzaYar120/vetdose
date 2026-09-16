@@ -1,0 +1,27 @@
+.history-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-screen__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+  background: var(--bg);
+  cursor: pointer;
+  color: var(--text);
+  font: inherit;
+}
+
+.history-screen__product {
+  font-size: 16px;
+}
+
+.history-screen__meta,
+.history-screen__timestamp {
+  font-size: 13px;
+  color: var(--text-muted);
+}

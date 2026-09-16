@@ -6,8 +6,10 @@
 
 import { db } from "./local/db"
 
-const SERVER_BASE_URL_KEY = "serverBaseUrl"
-const LAST_SYNC_TIME_KEY = "lastSyncTime"
+/** Exported so screens can `useLiveQuery(() => db.settings.get(KEY))` for a
+ * reactive read instead of calling the getters below imperatively. */
+export const SERVER_BASE_URL_KEY = "serverBaseUrl"
+export const LAST_SYNC_TIME_KEY = "lastSyncTime"
 
 /** Vite's dev server runs on :5173 (see `backend/app/config.py`'s default
  * CORS origin); the backend itself defaults to :8000. */

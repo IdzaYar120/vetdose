@@ -25,10 +25,18 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg://vetdose:vetdose@db:5432/vetdose
       ADMIN_API_KEY: ${ADMIN_API_KEY:-change-me}
-      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:5173"]}
+      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:5173", "http://localhost:8080"]}
       ENVIRONMENT: development
     ports:
       - "8000:8000"
+
+  web:
+    build: ./web
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
 
 volumes:
   vetdose_pg_data:

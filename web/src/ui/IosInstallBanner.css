@@ -1,0 +1,25 @@
+.ios-install-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.ios-install-banner p {
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.ios-install-banner__close {
+  flex: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px 8px;
+}

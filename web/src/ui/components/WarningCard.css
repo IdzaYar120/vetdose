@@ -1,0 +1,27 @@
+.warning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.warning-card p {
+  margin: 0;
+}
+
+.warning-card__icon {
+  flex: none;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.warning-card--absolute {
+  background: rgba(211, 47, 47, 0.12);
+  color: var(--text);
+}
+
+.warning-card--caution {
+  background: rgba(245, 166, 35, 0.15);
+  color: var(--text);
+}
